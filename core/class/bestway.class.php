@@ -78,7 +78,7 @@ class bestway extends eqLogic {
   public static function sync(){
     $devices = self::requestApi('/app/bindings');
     foreach ($devices['devices'] as $device) {
-      $eqLogic = self::byLogicalId($device['did'], 'dyson');
+      $eqLogic = self::byLogicalId($device['did'], 'bestway');
       if (!is_object($eqLogic)) {
         $eqLogic = new self();
         $eqLogic->setLogicalId($device['did']);
