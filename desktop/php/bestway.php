@@ -17,6 +17,11 @@ $eqLogics = eqLogic::byType($plugin->getId());
 				<span>{{Configuration}}</span>
 			</div>
 		</div>
+		<div class="cursor logoSecondary" id="bt_syncBestway">
+			<i class="fas fa-sync-alt"></i>
+			<br/>
+			<span>{{Synchroniser}}</span>
+		</div>
 		<legend><i class="fas fa-table"></i> {{Mes équipements Bestway}}</legend>
 		<input class="form-control" placeholder="{{Rechercher}}" id="in_searchEqlogic" />
 		<div class="eqLogicThumbnailContainer">
