@@ -87,7 +87,7 @@
           "mobile" :"bestway::wave"
         },
         "configuration" : {
-          "attrValue" : 1,
+          "attrValue" : true,
           "attr" : "wave_power"
         },
         "value" : "Bulles",
@@ -106,7 +106,7 @@
           "mobile" :"bestway::wave"
         },
         "configuration" : {
-          "attrValue" : 0,
+          "attrValue" : false,
           "attr" : "wave_power"
         },
         "value" : "Bulles",
@@ -125,7 +125,7 @@
           "mobile" :"bestway::filter"
         },
         "configuration" : {
-          "attrValue" : 1,
+          "attrValue" : true,
           "attr" : "filter_power"
         },
         "value" : "Filtration",
@@ -144,7 +144,7 @@
           "mobile" :"bestway::filter"
         },
         "configuration" : {
-          "attrValue" : 0,
+          "attrValue" : false,
           "attr" : "filter_power"
         },
         "value" : "Filtration",
@@ -163,7 +163,7 @@
           "mobile" :"bestway::heat"
         },
         "configuration" : {
-          "attrValue" : 1,
+          "attrValue" : true,
           "attr" : "heat_power"
         },
         "value" : "Chauffage",
@@ -182,7 +182,7 @@
           "mobile" :"bestway::heat"
         },
         "configuration" : {
-          "attrValue" : 0,
+          "attrValue" : false,
           "attr" : "heat_power"
         },
         "value" : "Chauffage",
@@ -201,7 +201,7 @@
           "mobile" :"bestway::state"
         },
         "configuration" : {
-          "attrValue" : 1,
+          "attrValue" : true,
           "attr" : "power"
         },
         "value" : "Etat",
@@ -220,7 +220,7 @@
           "mobile" :"bestway::state"
         },
         "configuration" : {
-          "attrValue" : 0,
+          "attrValue" : false,
           "attr" : "power"
         },
         "value" : "Etat",

@@ -26,6 +26,27 @@ class bestway extends eqLogic {
   
   /*     * ***********************Methode static*************************** */
   
+  public static function templateWidget(){
+    $return = array('action' => array('other' => array()));
+    $return['action']['other']['state'] = array(
+      'template' => 'tmplicon',
+      'replace' => array('#_icon_on_#' => '<i class=\'fas fa-fan\'></i>','#_icon_off_#' => '<i class=\'fas fa-times\'></i>'),
+    );
+    $return['action']['other']['filter'] = array(
+      'template' => 'tmplicon',
+      'replace' => array('#_icon_on_#' => '<i class=\'fas fa-filter\'></i>','#_icon_off_#' => '<i class=\'fas fa-times\'></i>'),
+    );
+    $return['action']['other']['wave'] = array(
+      'template' => 'tmplicon',
+      'replace' => array('#_icon_on_#' => '<i class=\'fas fa-water\'></i>','#_icon_off_#' => '<i class=\'fas fa-times\'></i>'),
+    );
+    $return['action']['other']['heat'] = array(
+      'template' => 'tmplicon',
+      'replace' => array('#_icon_on_#' => '<i class=\'fas fa-fire\'></i>','#_icon_off_#' => '<i class=\'fas fa-times\'></i>'),
+    );
+    return $return;
+  }
+  
   public static function getBaseApi(){
     switch (config::byKey('location','bestway')) {
       case 'eu':
@@ -68,10 +89,15 @@ class bestway extends eqLogic {
       'X-Gizwits-Application-Id: '.config::byKey('gizwitsappid','bestway'),
       'X-Gizwits-User-token: '.self::getUserToken()
     ));
+    log::add('bestway','debug','URL : '.self::getBaseApi().$_url);
     if($_post != null){
+      log::add('bestway','debug','Post : '.print_r($_post,true));
       $request_http->setPost($_post);
     }
     $result = json_decode($request_http->exec(30),true);
+    if(isset($result['error_message'])){
+      throw new \Exception($result['error_message']);
+    }
     return $result;
   }
   
@@ -170,6 +196,7 @@ class bestway extends eqLogic {
   
   public function refresh(){
     $data = self::requestApi('/app/devdata/'.$this->getLogicalId().'/latest');
+    log::add('bestway','debug',$this->getHumanName().' : '.json_encode($data));
     $date = date('Y-m-d H:i:s',$data['updated_at']);
     foreach ($this->getCmd('info') as $cmd){
       if(isset($data['attr'][$cmd->getLogicalId()])){
@@ -177,6 +204,14 @@ class bestway extends eqLogic {
         $this->checkAndUpdateCmd($cmd, $value,$date);
       }
     }
+  }
+  
+  public function setAttr($_key,$_value){
+    self::requestApi('/app/control/'.$this->getLogicalId(),json_encode(array(
+      'attrs' => array(
+        $_key => $_value
+      )
+    )));
   }
   
   /*     * **********************Getteur Setteur*************************** */
@@ -195,7 +230,20 @@ class bestwayCmd extends cmd {
   public function execute($_options = array()) {
     $eqLogic = $this->getEqLogic();
     if($this->getLogicalId() != 'refresh'){
-      
+      $value = $this->getConfiguration('attrValue');
+      switch ($this->getSubType()) {
+        case 'slider':
+        $value = str_replace('#slider#', $_options['slider'], $value);
+        break;
+        case 'color':
+        $value = str_replace('#color#', $_options['color'], $value);
+        break;
+        case 'select':
+        $value = str_replace('#select#', $_options['select'], $value);
+        break;
+      }
+      $eqLogic->setAttr($this->getConfiguration('attr'),$value);
+      sleep(2);
     }
     return $eqLogic->refresh();
   }
