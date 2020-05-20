@@ -24,14 +24,10 @@
         "type": "info",
         "subtype": "numeric",
         "display": {
-          "generic_type": "SET_TEMPERATURE"
-        },
-        "template" :{
-          "dashboard" :"line",
-          "mobile" :"line"
+          "generic_type": "THERMOSTAT_SETPOINT"
         },
         "unite": "°C",
-        "isVisible": 1,
+        "isVisible": 0,
         "isHistorized": 1,
         "logicalId": "temp_set"
       },
@@ -42,11 +38,7 @@
         "display": {
           "generic_type": "SET_TEMPERATURE"
         },
-        "template" :{
-          "dashboard" :"line",
-          "mobile" :"line"
-        },
-        "isVisible": 1,
+        "isVisible": 0,
         "isHistorized": 1,
         "logicalId": "filter_power"
       },
@@ -57,26 +49,18 @@
         "display": {
           "generic_type": "DONT"
         },
-        "template" :{
-          "dashboard" :"line",
-          "mobile" :"line"
-        },
-        "isVisible": 1,
+        "isVisible": 0,
         "isHistorized": 1,
-        "logicalId": "filter_power"
+        "logicalId": "heat_power"
       },
       {
         "name": "Etat",
         "type": "info",
         "subtype": "binary",
         "display": {
-          "generic_type": "DONT"
+          "generic_type": "ENERGY_STATE"
         },
-        "template" :{
-          "dashboard" :"line",
-          "mobile" :"line"
-        },
-        "isVisible": 1,
+        "isVisible": 0,
         "isHistorized": 1,
         "logicalId": "power"
       },
@@ -87,13 +71,180 @@
         "display": {
           "generic_type": "DONT"
         },
-        "template" :{
-          "dashboard" :"line",
-          "mobile" :"line"
-        },
-        "isVisible": 1,
+        "isVisible": 0,
         "isHistorized": 1,
         "logicalId": "wave_power"
+      },
+      {
+        "name": "Bulles On",
+        "type": "action",
+        "subtype": "other",
+        "display": {
+          "generic_type": "DONT"
+        },
+        "template" :{
+          "dashboard" :"bestway::wave",
+          "mobile" :"bestway::wave"
+        },
+        "configuration" : {
+          "attrValue" : 1,
+          "attr" : "wave_power"
+        },
+        "value" : "Bulles",
+        "isVisible": 1,
+        "logicalId": "setWaveOn"
+      },
+      {
+        "name": "Bulles Off",
+        "type": "action",
+        "subtype": "other",
+        "display": {
+          "generic_type": "DONT"
+        },
+        "template" :{
+          "dashboard" :"bestway::wave",
+          "mobile" :"bestway::wave"
+        },
+        "configuration" : {
+          "attrValue" : 0,
+          "attr" : "wave_power"
+        },
+        "value" : "Bulles",
+        "isVisible": 1,
+        "logicalId": "setWaveOff"
+      },
+      {
+        "name": "Filtration On",
+        "type": "action",
+        "subtype": "other",
+        "display": {
+          "generic_type": "DONT"
+        },
+        "template" :{
+          "dashboard" :"bestway::filter",
+          "mobile" :"bestway::filter"
+        },
+        "configuration" : {
+          "attrValue" : 1,
+          "attr" : "filter_power"
+        },
+        "value" : "Filtration",
+        "isVisible": 1,
+        "logicalId": "setFilterOn"
+      },
+      {
+        "name": "Filtration Off",
+        "type": "action",
+        "subtype": "other",
+        "display": {
+          "generic_type": "DONT"
+        },
+        "template" :{
+          "dashboard" :"bestway::filter",
+          "mobile" :"bestway::filter"
+        },
+        "configuration" : {
+          "attrValue" : 0,
+          "attr" : "filter_power"
+        },
+        "value" : "Filtration",
+        "isVisible": 1,
+        "logicalId": "setFilterOff"
+      },
+      {
+        "name": "Chauffage On",
+        "type": "action",
+        "subtype": "other",
+        "display": {
+          "generic_type": "DONT"
+        },
+        "template" :{
+          "dashboard" :"bestway::heat",
+          "mobile" :"bestway::heat"
+        },
+        "configuration" : {
+          "attrValue" : 1,
+          "attr" : "heat_power"
+        },
+        "value" : "Chauffage",
+        "isVisible": 1,
+        "logicalId": "setHeatOn"
+      },
+      {
+        "name": "Chauffage Off",
+        "type": "action",
+        "subtype": "other",
+        "display": {
+          "generic_type": "DONT"
+        },
+        "template" :{
+          "dashboard" :"bestway::heat",
+          "mobile" :"bestway::heat"
+        },
+        "configuration" : {
+          "attrValue" : 0,
+          "attr" : "heat_power"
+        },
+        "value" : "Chauffage",
+        "isVisible": 1,
+        "logicalId": "setHeatOff"
+      },
+      {
+        "name": "Power On",
+        "type": "action",
+        "subtype": "other",
+        "display": {
+          "generic_type": "ENERGY_ON"
+        },
+        "template" :{
+          "dashboard" :"bestway::state",
+          "mobile" :"bestway::state"
+        },
+        "configuration" : {
+          "attrValue" : 1,
+          "attr" : "power"
+        },
+        "value" : "Etat",
+        "isVisible": 1,
+        "logicalId": "setPowerOn"
+      },
+      {
+        "name": "Power Off",
+        "type": "action",
+        "subtype": "other",
+        "display": {
+          "generic_type": "ENERGY_OFF"
+        },
+        "template" :{
+          "dashboard" :"bestway::state",
+          "mobile" :"bestway::state"
+        },
+        "configuration" : {
+          "attrValue" : 0,
+          "attr" : "power"
+        },
+        "value" : "Etat",
+        "isVisible": 1,
+        "logicalId": "setPowerOff"
+      },
+      {
+        "name": "Consigne",
+        "type": "action",
+        "subtype": "slider",
+        "display": {
+          "generic_type": "THERMOSTAT_SET_SETPOINT"
+        },
+        "template" :{
+          "dashboard" :"button",
+          "mobile" :"button"
+        },
+        "configuration" : {
+          "attrValue" : "#slider#",
+          "attr" : "temp_set"
+        },
+        "value" : "Thermostat",
+        "isVisible": 1,
+        "logicalId": "setTemp"
       }
     ]
   }
