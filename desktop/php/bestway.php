@@ -95,6 +95,12 @@ $eqLogics = eqLogic::byType($plugin->getId());
 										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
 									</div>
 								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">{{Activer filtration auto}}</label>
+									<div class="col-sm-6">
+										<input type="checkbox" class="eqLogicAttr" data-l1key="configuration" data-l2key="filter::auto" />
+									</div>
+								</div>
 							</fieldset>
 						</form>
 					</div>

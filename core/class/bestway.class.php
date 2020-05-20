@@ -30,11 +30,11 @@ class bestway extends eqLogic {
     $return = array('action' => array('other' => array()));
     $return['action']['other']['state'] = array(
       'template' => 'tmplicon',
-      'replace' => array('#_icon_on_#' => '<i class=\'fas fa-fan\'></i>','#_icon_off_#' => '<i class=\'fas fa-times\'></i>'),
+      'replace' => array('#_icon_on_#' => '<i class=\'fas fa-power-off icon_green \'></i>','#_icon_off_#' => '<i class=\'fas fa-times\'></i>'),
     );
     $return['action']['other']['filter'] = array(
       'template' => 'tmplicon',
-      'replace' => array('#_icon_on_#' => '<i class=\'fas fa-filter\'></i>','#_icon_off_#' => '<i class=\'fas fa-times\'></i>'),
+      'replace' => array('#_icon_on_#' => '<i class=\'fas fa-fan icon_blue\'></i>','#_icon_off_#' => '<i class=\'fas fa-times\'></i>'),
     );
     $return['action']['other']['wave'] = array(
       'template' => 'tmplicon',
@@ -42,7 +42,7 @@ class bestway extends eqLogic {
     );
     $return['action']['other']['heat'] = array(
       'template' => 'tmplicon',
-      'replace' => array('#_icon_on_#' => '<i class=\'fas fa-fire\'></i>','#_icon_off_#' => '<i class=\'fas fa-times\'></i>'),
+      'replace' => array('#_icon_on_#' => '<i class=\'fas fa-fire icon_red\'></i>','#_icon_off_#' => '<i class=\'fas fa-times\'></i>'),
     );
     return $return;
   }
@@ -143,12 +143,89 @@ class bestway extends eqLogic {
       try {
         $bestway->refresh();
       } catch (\Exception $e) {
-        log::add('dyson','error',$dyson->getHumanName().' '.$e->getMessage());
+        log::add('bestway','error',$bestway->getHumanName().' '.$e->getMessage());
       }
     }
   }
   
+  public function cronHourly(){
+    foreach (eqLogic::byType('bestway',true) as $bestway) {
+      try {
+        if($bestway->getConfiguration('filter::auto') != 1){
+          continue;
+        }
+      } catch (\Exception $e) {
+        log::add('bestway','error',$bestway->getHumanName().' '.$e->getMessage());
+      }
+    }
+  }
+  
+  public static function filterOff($_options){
+    $bestway = eqLogic::byId($_options['bastway_id']);
+    if (!is_object($bestway) || $bestway->getIsEnable() == 0) {
+      return;
+    }
+    $heat_cmd = $bestway->getCmd('info','heat_power');
+    if($heat_cmd->execCmd() == 1){
+      log::add('bestway','debug',$bestway->getHumanName().' Heating is on do not power off filtration');
+    }
+    log::add('bestway','debug',$this->getHumanName().' Power off filtration');
+    $bestway->getCmd('action','setFilterOff')->execCmd();
+  }
+  
   /*     * *********************Méthodes d'instance************************* */
+  
+  public function handleAutoFilter(){
+    $temp_cmd = $this->getCmd('info','temp_now');
+    $filter_cmd = $this->getCmd('info','filter_power');
+    $temperature = history::getTemporalAvg($temp_cmd->getId(),date('Y-m-d H:i:s',strtotime('-1 hour')),date('Y-m-d H:i:s'));
+    $run_percent = round(($temperature / 2) / 24 * 100);
+    log::add('bestway','debug',$this->getHumanName().' Need percent filtration : '.$run_percent.'%');
+    $histories = history::all($filter_cmd->getId(), date('Y-m-d H:i:s',strtotime('-1 hour')), date('Y-m-d H:i:s'));
+    $datetime = strtotime('-1 hour');
+    $run_time = 0;
+    foreach ($histories as $history) {
+      if($history->getValue() == 1){
+        $run_time += strtotime($history->getDatetime()) - $datetime;
+      }
+      $datetime = strtotime($history->getDatetime());
+    }
+    if($filter_cmd->execCmd() == 1){
+      $run_time += strtotime('now') - $datetime;
+    }
+    $run_time_percent = round($run_time / 36);
+    log::add('bestway','debug',$this->getHumanName().' Filtration run time in last hour : '.$run_time.'s => '.$run_time_percent.'%');
+    if($run_time_percent > $run_percent){
+      log::add('bestway','debug',$this->getHumanName().' Runtime ok, no filtration needed');
+      $heat_cmd = $this->getCmd('info','heat_power');
+      if($heat_cmd->execCmd() == 1){
+        log::add('bestway','debug',$this->getHumanName().' Heating is on do not power off filtration');
+        return;
+      }
+      log::add('bestway','debug',$this->getHumanName().' Power off filtration');
+      $this->getCmd('action','setFilterOff')->execCmd();
+      return;
+    }
+    $missing_time = ($run_time - $run_time_percent) / 100 * 60;
+    log::add('bestway','debug',$this->getHumanName().' Missing filtration time : '.$missing_time.'min');
+    if($missing_time < 5){
+      $missing_time = 5;
+    }
+    log::add('bestway','debug',$this->getHumanName().' Power on filtration');
+    $this->getCmd('action','setFilterOn')->execCmd();
+    $options = array('bastway_id' => intval($this->getId()));
+    $cron = cron::byClassAndFunction('bestway', 'filterOff', $options);
+    if (is_object($cron)) {
+      $cron->remove(false);
+    }
+    $cron = new cron();
+    $cron->setClass('bestway');
+    $cron->setFunction('filterOff');
+    $cron->setOption($options);
+    $cron->setSchedule(cron::convertDateToCron(strtotime('now +'.$missing_time.'min')));
+    $cron->setOnce(1);
+    $cron->save();
+  }
   
   public function postSave() {
     if ($this->getConfiguration('applyDevice') != $this->getConfiguration('device')) {
