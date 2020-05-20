@@ -101,6 +101,12 @@ $eqLogics = eqLogic::byType($plugin->getId());
 										<input type="checkbox" class="eqLogicAttr" data-l1key="configuration" data-l2key="filter::auto" />
 									</div>
 								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">{{Chauffage, durée max autorisé (en min,0 pour illimité)}}</label>
+									<div class="col-sm-3">
+										<input  class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="heating::maxDuration" />
+									</div>
+								</div>
 							</fieldset>
 						</form>
 					</div>

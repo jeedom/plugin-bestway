@@ -142,6 +142,7 @@ class bestway extends eqLogic {
     foreach (eqLogic::byType('bestway',true) as $bestway) {
       try {
         $bestway->refresh();
+        $bestway->checkHeating();
       } catch (\Exception $e) {
         log::add('bestway','error',$bestway->getHumanName().' '.$e->getMessage());
       }
@@ -151,9 +152,6 @@ class bestway extends eqLogic {
   public function cronHourly(){
     foreach (eqLogic::byType('bestway',true) as $bestway) {
       try {
-        if($bestway->getConfiguration('filter::auto') != 1){
-          continue;
-        }
         $bestway->handleAutoFilter();
       } catch (\Exception $e) {
         log::add('bestway','error',$bestway->getHumanName().' '.$e->getMessage());
@@ -177,12 +175,15 @@ class bestway extends eqLogic {
   /*     * *********************Méthodes d'instance************************* */
   
   public function handleAutoFilter(){
+    if($this->getConfiguration('filter::auto') != 1){
+      return;
+    }
     $temp_cmd = $this->getCmd('info','temp_now');
     $filter_cmd = $this->getCmd('info','filter_power');
     $temperature = history::getTemporalAvg($temp_cmd->getId(),date('Y-m-d H:i:s',strtotime('-1 hour')),date('Y-m-d H:i:s'));
     $run_percent = round(($temperature / 2) / 24 * 100);
     log::add('bestway','debug',$this->getHumanName().' Need percent filtration : '.$run_percent.'%');
-    $duration = $run_time / 100 * 60;
+    $duration = round($run_percent / 100 * 60);
     log::add('bestway','debug',$this->getHumanName().' Filtration time needed : '.$duration.'min');
     if($duration < 5){
       $duration = 5;
@@ -206,6 +207,23 @@ class bestway extends eqLogic {
       $cron->setOnce(1);
       $cron->save();
     }
+  }
+  
+  public function checkHeating(){
+    if($this->getConfiguration('heating::maxDuration',0) != 0){
+      return;
+    }
+    log::add('bestway','debug',$this->getHumanName().' Check heating duration');
+    $cmd_heating = $this->getCmd('info','heat_power');
+    if($cmd_heating->execCmd() == 0){
+      return;
+    }
+    $duration = strtotime('now') - strtotime($cmd_heating->getValueDate());
+    log::add('bestway','debug',$this->getHumanName().' Heating duration : '.$duration.'s');
+    if($duration > $this->getConfiguration('heating::maxDuration',0) * 60){
+      log::add('bestway','debug',$this->getHumanName().' Too long heating, stop it');
+    }
+    $this->getCmd('action','setHeatOff')->execCmd();
   }
   
   public function postSave() {
