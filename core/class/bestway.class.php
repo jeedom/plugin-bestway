@@ -154,6 +154,7 @@ class bestway extends eqLogic {
         if($bestway->getConfiguration('filter::auto') != 1){
           continue;
         }
+        $bestway->handleAutoFilter();
       } catch (\Exception $e) {
         log::add('bestway','error',$bestway->getHumanName().' '.$e->getMessage());
       }
