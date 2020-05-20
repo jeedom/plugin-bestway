@@ -182,50 +182,30 @@ class bestway extends eqLogic {
     $temperature = history::getTemporalAvg($temp_cmd->getId(),date('Y-m-d H:i:s',strtotime('-1 hour')),date('Y-m-d H:i:s'));
     $run_percent = round(($temperature / 2) / 24 * 100);
     log::add('bestway','debug',$this->getHumanName().' Need percent filtration : '.$run_percent.'%');
-    $histories = history::all($filter_cmd->getId(), date('Y-m-d H:i:s',strtotime('-1 hour')), date('Y-m-d H:i:s'));
-    $datetime = strtotime('-1 hour');
-    $run_time = 0;
-    foreach ($histories as $history) {
-      if($history->getValue() == 1){
-        $run_time += strtotime($history->getDatetime()) - $datetime;
-      }
-      $datetime = strtotime($history->getDatetime());
+    $duration = $run_time / 100 * 60;
+    log::add('bestway','debug',$this->getHumanName().' Filtration time needed : '.$duration.'min');
+    if($duration < 5){
+      $duration = 5;
     }
-    if($filter_cmd->execCmd() == 1){
-      $run_time += strtotime('now') - $datetime;
-    }
-    $run_time_percent = round($run_time / 36);
-    log::add('bestway','debug',$this->getHumanName().' Filtration run time in last hour : '.$run_time.'s => '.$run_time_percent.'%');
-    if($run_time_percent > $run_percent){
-      log::add('bestway','debug',$this->getHumanName().' Runtime ok, no filtration needed');
-      $heat_cmd = $this->getCmd('info','heat_power');
-      if($heat_cmd->execCmd() == 1){
-        log::add('bestway','debug',$this->getHumanName().' Heating is on do not power off filtration');
-        return;
-      }
-      log::add('bestway','debug',$this->getHumanName().' Power off filtration');
-      $this->getCmd('action','setFilterOff')->execCmd();
-      return;
-    }
-    $missing_time = ($run_time - $run_time_percent) / 100 * 60;
-    log::add('bestway','debug',$this->getHumanName().' Missing filtration time : '.$missing_time.'min');
-    if($missing_time < 5){
-      $missing_time = 5;
+    if($duration > 55){
+      $duration = 60;
     }
     log::add('bestway','debug',$this->getHumanName().' Power on filtration');
     $this->getCmd('action','setFilterOn')->execCmd();
-    $options = array('bastway_id' => intval($this->getId()));
-    $cron = cron::byClassAndFunction('bestway', 'filterOff', $options);
-    if (is_object($cron)) {
-      $cron->remove(false);
+    if($duration < 55){
+      $options = array('bastway_id' => intval($this->getId()));
+      $cron = cron::byClassAndFunction('bestway', 'filterOff', $options);
+      if (is_object($cron)) {
+        $cron->remove(false);
+      }
+      $cron = new cron();
+      $cron->setClass('bestway');
+      $cron->setFunction('filterOff');
+      $cron->setOption($options);
+      $cron->setSchedule(cron::convertDateToCron(strtotime('now +'.$duration.'min')));
+      $cron->setOnce(1);
+      $cron->save();
     }
-    $cron = new cron();
-    $cron->setClass('bestway');
-    $cron->setFunction('filterOff');
-    $cron->setOption($options);
-    $cron->setSchedule(cron::convertDateToCron(strtotime('now +'.$missing_time.'min')));
-    $cron->setOnce(1);
-    $cron->save();
   }
   
   public function postSave() {
