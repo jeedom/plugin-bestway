@@ -320,6 +320,9 @@ class bestwayCmd extends cmd {
         $value = str_replace('#select#', $_options['select'], $value);
         break;
       }
+      if($this->getConfiguration('attr') == 'temp_set'){
+        $value = round($value);
+      }
       $eqLogic->setAttr($this->getConfiguration('attr'),$value);
       sleep(2);
     }
