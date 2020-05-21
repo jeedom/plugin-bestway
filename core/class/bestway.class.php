@@ -322,7 +322,7 @@ class bestwayCmd extends cmd {
         $value = round($value);
       }
       $eqLogic->setAttr($this->getConfiguration('attr'),$value);
-      sleep(2);
+      sleep(4);
     }
     return $eqLogic->refresh();
   }
