@@ -143,16 +143,9 @@ class bestway extends eqLogic {
       try {
         $bestway->refresh();
         $bestway->checkHeating();
-      } catch (\Exception $e) {
-        log::add('bestway','error',$bestway->getHumanName().' '.$e->getMessage());
-      }
-    }
-  }
-  
-  public function cronHourly(){
-    foreach (eqLogic::byType('bestway',true) as $bestway) {
-      try {
-        $bestway->handleAutoFilter();
+        if(date('i') < 10){
+          $bestway->handleAutoFilter();
+        }
       } catch (\Exception $e) {
         log::add('bestway','error',$bestway->getHumanName().' '.$e->getMessage());
       }
