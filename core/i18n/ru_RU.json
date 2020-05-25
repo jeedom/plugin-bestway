@@ -1,0 +1,53 @@
+{
+    "plugins\/bestway\/plugin_info\/configuration.php": {
+        "Localisation": "",
+        "Europe": "",
+        "Chine": "",
+        "Etats-Unis": "",
+        "Nom d'utilisateur": "Имя пользователя",
+        "Mot de passe": "Пароль"
+    },
+    "plugins\/bestway\/desktop\/php\/bestway.php": {
+        "401 - Accès non autorisé": "401 - Несанкционированный доступ",
+        "Gestion": "Управление",
+        "Configuration": "Конфигурация",
+        "Synchroniser": "Синхронизировать",
+        "Mes équipements Bestway": "",
+        "Rechercher": "поиск",
+        "Configuration avancée": "Расширенные настройки",
+        "Dupliquer": "дубликат",
+        "Sauvegarder": "Сохранить",
+        "Supprimer": "удаление",
+        "Equipement": "Оборудование",
+        "Commandes": "Команды",
+        "Nom de l'équipement Bestway": "",
+        "Nom de l'équipement template": "Название шаблона оборудования",
+        "Objet parent": "Родительский объект",
+        "Aucun": "Нет",
+        "Catégorie": "категория",
+        "Activer": "активировать",
+        "Visible": "Видимый",
+        "Activer filtration auto": "",
+        "Chauffage, durée max autorisé (en min,0 pour illimité)": "",
+        "MAC": "макинтош",
+        "Wifi version": "",
+        "ID": "Идентификатор",
+        "Modèle": "Модель",
+        "Nom": "Имя",
+        "Type": "Тип",
+        "Action": "Действие"
+    },
+    "plugins\/bestway\/desktop\/js\/bestway.js": {
+        "Nom": "Имя",
+        "Afficher": "дисплей",
+        "Historiser": "История",
+        "Tester": "Тест"
+    },
+    "plugins\/bestway\/core\/ajax\/bestway.ajax.php": {
+        "401 - Accès non autorisé": "401 - Несанкционированный доступ",
+        "Aucune méthode correspondante à : ": "Aucune methode correspondante à :"
+    },
+    "plugins\/bestway\/core\/class\/bestway.class.php": {
+        "Rafraîchir": "Обновить"
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "plugins\/bestway\/plugin_info\/configuration.php": {
+        "Localisation": "Ubicación",
+        "Europe": "Europa",
+        "Chine": "China",
+        "Etats-Unis": "Estados Unidos",
+        "Nom d'utilisateur": "Nombre de usuario",
+        "Mot de passe": "Contraseña"
+    },
+    "plugins\/bestway\/desktop\/php\/bestway.php": {
+        "401 - Accès non autorisé": "401 - Acceso no autorizado",
+        "Gestion": "Gestión",
+        "Configuration": "Configuración",
+        "Synchroniser": "Sincronizar",
+        "Mes équipements Bestway": "Mi equipo Bestway",
+        "Rechercher": "Buscar",
+        "Configuration avancée": "Configuración avanzada",
+        "Dupliquer": "Duplicar",
+        "Sauvegarder": "Guardar",
+        "Supprimer": "Borrar",
+        "Equipement": "Dispositivos",
+        "Commandes": "Comandos",
+        "Nom de l'équipement Bestway": "Nombre del equipo Bestway",
+        "Nom de l'équipement template": "Plantilla de nombre de equipo",
+        "Objet parent": "Objeto padre",
+        "Aucun": "Ninguna",
+        "Catégorie": "Categoría",
+        "Activer": "Activar",
+        "Visible": "Visible",
+        "Activer filtration auto": "Activa la filtración automática",
+        "Chauffage, durée max autorisé (en min,0 pour illimité)": "Calefacción, duración máxima permitida (en min, 0 para ilimitado)",
+        "MAC": "Mac",
+        "Wifi version": "Versión Wifi",
+        "ID": "Identificación",
+        "Modèle": "Modelo",
+        "Nom": "Nombre",
+        "Type": "Tipo",
+        "Action": "Acción"
+    },
+    "plugins\/bestway\/desktop\/js\/bestway.js": {
+        "Nom": "Nombre",
+        "Afficher": "Mostrar",
+        "Historiser": "Guardar historial",
+        "Tester": "Probar"
+    },
+    "plugins\/bestway\/core\/ajax\/bestway.ajax.php": {
+        "401 - Accès non autorisé": "401 - Acceso no autorizado",
+        "Aucune méthode correspondante à : ": "Ningún método correspondiente a:"
+    },
+    "plugins\/bestway\/core\/class\/bestway.class.php": {
+        "Rafraîchir": "Refrescar"
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "plugins\/bestway\/plugin_info\/configuration.php": {
+        "Localisation": "",
+        "Europe": "",
+        "Chine": "",
+        "Etats-Unis": "",
+        "Nom d'utilisateur": "Nama pemakai",
+        "Mot de passe": "Password"
+    },
+    "plugins\/bestway\/desktop\/php\/bestway.php": {
+        "401 - Accès non autorisé": "401 - Akses tidak sah",
+        "Gestion": "Manajemen",
+        "Configuration": "Konfigurasi",
+        "Synchroniser": "Menyinkronkan",
+        "Mes équipements Bestway": "",
+        "Rechercher": "Pencarian",
+        "Configuration avancée": "Konfigurasi lanjutan",
+        "Dupliquer": "Duplikat",
+        "Sauvegarder": "Menyimpan",
+        "Supprimer": "Menghapus",
+        "Equipement": "Peralatan",
+        "Commandes": "Perintah",
+        "Nom de l'équipement Bestway": "",
+        "Nom de l'équipement template": "Nama peralatan contoh",
+        "Objet parent": "Objek induk",
+        "Aucun": "Tak ada",
+        "Catégorie": "Kategori",
+        "Activer": "Mengaktifkan",
+        "Visible": "Terlihat",
+        "Activer filtration auto": "",
+        "Chauffage, durée max autorisé (en min,0 pour illimité)": "",
+        "MAC": "Mac",
+        "Wifi version": "",
+        "ID": "",
+        "Modèle": "Model",
+        "Nom": "Nama",
+        "Type": "Jenis",
+        "Action": "Tindakan"
+    },
+    "plugins\/bestway\/desktop\/js\/bestway.js": {
+        "Nom": "Nama",
+        "Afficher": "Memenitikan",
+        "Historiser": "Historicize",
+        "Tester": "Coba"
+    },
+    "plugins\/bestway\/core\/ajax\/bestway.ajax.php": {
+        "401 - Accès non autorisé": "401 - Akses tidak sah",
+        "Aucune méthode correspondante à : ": "Aucune methode correspondante à :"
+    },
+    "plugins\/bestway\/core\/class\/bestway.class.php": {
+        "Rafraîchir": "Dingin"
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "plugins\/bestway\/plugin_info\/configuration.php": {
+        "Localisation": "",
+        "Europe": "",
+        "Chine": "",
+        "Etats-Unis": "",
+        "Nom d'utilisateur": "Kullanıcı adı",
+        "Mot de passe": "Şifre"
+    },
+    "plugins\/bestway\/desktop\/php\/bestway.php": {
+        "401 - Accès non autorisé": "401 - Yetkisiz erişim",
+        "Gestion": "Idare",
+        "Configuration": "Ayar",
+        "Synchroniser": "Senkeronize et",
+        "Mes équipements Bestway": "",
+        "Rechercher": "Arayın",
+        "Configuration avancée": "Gelişmiş ayarlar",
+        "Dupliquer": "Kopyala",
+        "Sauvegarder": "Kaydet",
+        "Supprimer": "Sil",
+        "Equipement": "Cihaz",
+        "Commandes": "Komutalar",
+        "Nom de l'équipement Bestway": "",
+        "Nom de l'équipement template": "Şablon cihazının ismi",
+        "Objet parent": "Üst nesne",
+        "Aucun": "Hiçbir",
+        "Catégorie": "Kategori",
+        "Activer": "Etkinleştir",
+        "Visible": "Görülebilir",
+        "Activer filtration auto": "",
+        "Chauffage, durée max autorisé (en min,0 pour illimité)": "",
+        "MAC": "",
+        "Wifi version": "",
+        "ID": "Kimlik",
+        "Modèle": "Model",
+        "Nom": "İsim",
+        "Type": "Çeşit",
+        "Action": "Eylem"
+    },
+    "plugins\/bestway\/desktop\/js\/bestway.js": {
+        "Nom": "İsim",
+        "Afficher": "Göster",
+        "Historiser": "Tarihe göre sırala",
+        "Tester": "Test et"
+    },
+    "plugins\/bestway\/core\/ajax\/bestway.ajax.php": {
+        "401 - Accès non autorisé": "401 - Yetkisiz erişim",
+        "Aucune méthode correspondante à : ": "Aşağıdakilere karşılık gelen bir yöntem yok:"
+    },
+    "plugins\/bestway\/core\/class\/bestway.class.php": {
+        "Rafraîchir": "Yenile"
+    }
+}

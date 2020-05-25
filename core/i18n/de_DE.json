@@ -1,0 +1,53 @@
+{
+    "plugins\/bestway\/plugin_info\/configuration.php": {
+        "Localisation": "Standort",
+        "Europe": "Europa",
+        "Chine": "China",
+        "Etats-Unis": "Vereinigte Staaten",
+        "Nom d'utilisateur": "Benutzername",
+        "Mot de passe": "Passwort"
+    },
+    "plugins\/bestway\/desktop\/php\/bestway.php": {
+        "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
+        "Gestion": "Verwaltung",
+        "Configuration": "Konfiguration",
+        "Synchroniser": "Synchronize",
+        "Mes équipements Bestway": "Meine Bestway-Ausrüstung",
+        "Rechercher": "Suchen nach",
+        "Configuration avancée": "Erweiterte Konfiguration",
+        "Dupliquer": "Duplikat",
+        "Sauvegarder": "Speichern",
+        "Supprimer": "Löschen",
+        "Equipement": "Gerät",
+        "Commandes": "Befehle",
+        "Nom de l'équipement Bestway": "Name der Bestway-Ausrüstung",
+        "Nom de l'équipement template": "Gerätename Vorlage",
+        "Objet parent": "Übergeordnetes Objekt",
+        "Aucun": "Ohne",
+        "Catégorie": "Kategorie",
+        "Activer": "Aktivieren",
+        "Visible": "Sichtbar",
+        "Activer filtration auto": "Aktivieren Sie die automatische Filterung",
+        "Chauffage, durée max autorisé (en min,0 pour illimité)": "Heizung, maximal zulässige Dauer (in min, 0 für unbegrenzt)",
+        "MAC": "MAC",
+        "Wifi version": "Wifi-Version",
+        "ID": "Identifikation",
+        "Modèle": "Modell",
+        "Nom": "Name",
+        "Type": "Typ",
+        "Action": "Aktion"
+    },
+    "plugins\/bestway\/desktop\/js\/bestway.js": {
+        "Nom": "Name",
+        "Afficher": "Anzeige",
+        "Historiser": "Chronik",
+        "Tester": "Test"
+    },
+    "plugins\/bestway\/core\/ajax\/bestway.ajax.php": {
+        "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
+        "Aucune méthode correspondante à : ": "Keine Methode entsprechend:"
+    },
+    "plugins\/bestway\/core\/class\/bestway.class.php": {
+        "Rafraîchir": "Aktualisieren"
+    }
+}

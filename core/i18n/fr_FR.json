@@ -1,0 +1,53 @@
+{
+    "plugins\/bestway\/plugin_info\/configuration.php": {
+        "Localisation": "Localisation",
+        "Europe": "Europe",
+        "Chine": "Chine",
+        "Etats-Unis": "Etats-Unis",
+        "Nom d'utilisateur": "Nom d'utilisateur",
+        "Mot de passe": "Mot de passe"
+    },
+    "plugins\/bestway\/desktop\/php\/bestway.php": {
+        "401 - Accès non autorisé": "401 - Accès non autorisé",
+        "Gestion": "Gestion",
+        "Configuration": "Configuration",
+        "Synchroniser": "Synchroniser",
+        "Mes équipements Bestway": "Mes équipements Bestway",
+        "Rechercher": "Rechercher",
+        "Configuration avancée": "Configuration avancée",
+        "Dupliquer": "Dupliquer",
+        "Sauvegarder": "Sauvegarder",
+        "Supprimer": "Supprimer",
+        "Equipement": "Equipement",
+        "Commandes": "Commandes",
+        "Nom de l'équipement Bestway": "Nom de l'équipement Bestway",
+        "Nom de l'équipement template": "Nom de l'équipement template",
+        "Objet parent": "Objet parent",
+        "Aucun": "Aucun",
+        "Catégorie": "Catégorie",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "Activer filtration auto": "Activer filtration auto",
+        "Chauffage, durée max autorisé (en min,0 pour illimité)": "Chauffage, durée max autorisé (en min,0 pour illimité)",
+        "MAC": "MAC",
+        "Wifi version": "Wifi version",
+        "ID": "ID",
+        "Modèle": "Modèle",
+        "Nom": "Nom",
+        "Type": "Type",
+        "Action": "Action"
+    },
+    "plugins\/bestway\/desktop\/js\/bestway.js": {
+        "Nom": "Nom",
+        "Afficher": "Afficher",
+        "Historiser": "Historiser",
+        "Tester": "Tester"
+    },
+    "plugins\/bestway\/core\/ajax\/bestway.ajax.php": {
+        "401 - Accès non autorisé": "401 - Accès non autorisé",
+        "Aucune méthode correspondante à : ": "Aucune méthode correspondante à : "
+    },
+    "plugins\/bestway\/core\/class\/bestway.class.php": {
+        "Rafraîchir": "Rafraîchir"
+    }
+}
