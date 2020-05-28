@@ -7,6 +7,11 @@
         "Nom d'utilisateur": "Nome de Usuário",
         "Mot de passe": "Senha"
     },
+    "plugins\/bestway\/desktop\/php\/panel.php": {
+        "401 - Accès non autorisé": "401 - Acesso não autorizado",
+        "Liste objets": "Os itens da lista",
+        "Rechercher": "Pesquisa"
+    },
     "plugins\/bestway\/desktop\/php\/bestway.php": {
         "401 - Accès non autorisé": "401 - Acesso não autorizado",
         "Gestion": "Gestão",
@@ -37,6 +42,9 @@
         "Type": "Tipo",
         "Action": "Ação"
     },
+    "plugins\/bestway\/desktop\/js\/panel.js": {
+        "Historique": "Histórico"
+    },
     "plugins\/bestway\/desktop\/js\/bestway.js": {
         "Nom": "Nome",
         "Afficher": "Display",
@@ -48,6 +56,7 @@
         "Aucune méthode correspondante à : ": "Nenhum método correspondente a:"
     },
     "plugins\/bestway\/core\/class\/bestway.class.php": {
-        "Rafraîchir": "Legal"
+        "Rafraîchir": "Legal",
+        "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>": "Nenhum objeto raiz encontrado. Para criar um, vá para Geral -> Objeto. <br\/> Se você não sabe o que fazer ou é a primeira vez que utiliza o Jeedom, não hesite em consultar esta <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">página<\/a>"
     }
 }

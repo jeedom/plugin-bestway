@@ -7,6 +7,11 @@
         "Nom d'utilisateur": "Nome utente",
         "Mot de passe": "Password"
     },
+    "plugins\/bestway\/desktop\/php\/panel.php": {
+        "401 - Accès non autorisé": "401 - Accesso non autorizzato",
+        "Liste objets": "Elenco oggetti",
+        "Rechercher": "Ricercare"
+    },
     "plugins\/bestway\/desktop\/php\/bestway.php": {
         "401 - Accès non autorisé": "401 - Accesso non autorizzato",
         "Gestion": "Gestione",
@@ -37,6 +42,9 @@
         "Type": "Tipo",
         "Action": "Azione"
     },
+    "plugins\/bestway\/desktop\/js\/panel.js": {
+        "Historique": "Storico"
+    },
     "plugins\/bestway\/desktop\/js\/bestway.js": {
         "Nom": "Nome",
         "Afficher": "Mostra",
@@ -48,6 +56,7 @@
         "Aucune méthode correspondante à : ": "Nessun metodo corrispondente a:"
     },
     "plugins\/bestway\/core\/class\/bestway.class.php": {
-        "Rafraîchir": "Aggiorna"
+        "Rafraîchir": "Aggiorna",
+        "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>": ""
     }
 }
