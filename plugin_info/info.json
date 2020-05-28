@@ -6,6 +6,8 @@
   "author": "Jeedom SAS",
   "require": "4.0",
   "category": "communication",
+  "display": "panel",
+  "mobile": "panel",
   "hasDependency": false,
   "hasOwnDeamon": false,
   "maxDependancyInstallTime": 0,
