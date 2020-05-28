@@ -96,8 +96,8 @@ function initGraph(bestway_graphs){
     }
     let graphOption = {
       option : {
-        graphColor : '#3498db',
-        graphScale : 0,
+        graphColor : '#2ecc71',
+        graphScale : 1,
         displayAlert:false
       },
       height : 500,
@@ -106,16 +106,16 @@ function initGraph(bestway_graphs){
       showLegend : false,
       showScrollbar : false,
       displayAlert : false,
-      cmd_id : bestway.temp_now,
+      cmd_id : bestway.filter_power,
       dateRange : 'all',
       dateStart : bestway_graphs.day.start,
       dateEnd : bestway_graphs.day.end
     };
     var options = JSON.parse(JSON.stringify(graphOption));
     options.success = function(){
-      graphOption.option.graphColor = '#2ecc71';
-      graphOption.option.graphScale = 1;
-      graphOption.cmd_id = bestway.filter_power;
+      graphOption.option.graphColor = '#3498db';
+      graphOption.option.graphScale = 0;
+      graphOption.cmd_id = bestway.temp_now;
       jeedom.history.drawChart(JSON.parse(JSON.stringify(graphOption)));
       
       graphOption.option.graphColor = '#c0392b';

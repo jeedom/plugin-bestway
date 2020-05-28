@@ -237,7 +237,7 @@ class bestway extends eqLogic {
       $return['bestways'][$bestway->getId()]['html'] = $bestway->toHtml($_version);
       
       $cmd_filter_power = $bestway->getCmd('info','filter_power');
-      $cmd_filter_power->setDisplay('graphType', 'column');
+      $cmd_filter_power->setDisplay('graphType', 'area');
       $cmd_filter_power->save();
       
       $cmd_temp_now = $bestway->getCmd('info','temp_now');
@@ -245,11 +245,11 @@ class bestway extends eqLogic {
       $cmd_temp_now->save();
       
       $cmd_heat_power = $bestway->getCmd('info','heat_power');
-      $cmd_heat_power->setDisplay('graphType', 'column');
+      $cmd_heat_power->setDisplay('graphType', 'area');
       $cmd_heat_power->save();
       
       $cmd_wave_power = $bestway->getCmd('info','wave_power');
-      $cmd_wave_power->setDisplay('graphType', 'column');
+      $cmd_wave_power->setDisplay('graphType', 'area');
       $cmd_wave_power->save();
       
       $cmd_temp_set = $bestway->getCmd('info','temp_set');
