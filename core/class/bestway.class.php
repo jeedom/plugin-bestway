@@ -202,6 +202,7 @@ class bestway extends eqLogic {
     $heat_cmd = $bestway->getCmd('info','heat_power');
     if($heat_cmd->execCmd() == 1){
       log::add('bestway','debug',$bestway->getHumanName().' Heating is on do not power off filtration');
+      return;
     }
     log::add('bestway','debug',$bestway->getHumanName().' Power off filtration');
     $bestway->getCmd('action','setFilterOff')->execCmd();
