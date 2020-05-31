@@ -386,6 +386,19 @@ class bestway extends eqLogic {
         $this->checkAndUpdateCmd($cmd, $value,$date);
       }
     }
+    if($this->getConfiguration('notify::targetTemp') == 1 && $this->getConfiguration('info::cmd') != ''){
+      if($data['attr']['heat_power'] == 1 && $data['attr']['heat_temp_reach'] == 1){
+        if((strtotime('now') - $this->getCache('lastNotifyHeat')) < (60*60*24)){
+          $this->setCache('lastNotifyHeat',strtotime('now'));
+          $cmd = cmd::byId(str_replace('#','',$this->getConfiguration('info::cmd')));
+          if(is_object($cmd)){
+            $cmd->execCmd(array('message' => __('Votre SPA',__FILE__).' '.$this->getHumanName().' '.__('vient d\'atteindre sa température :',__FILE__).' '.$data['attr']['temp_now'].'°C'));
+          }
+        }
+      }else{
+        $this->setCache('lastNotifyHeat',0);
+      }
+    }
   }
   
   public function setAttr($_key,$_value){
