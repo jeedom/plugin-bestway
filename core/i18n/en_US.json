@@ -34,6 +34,8 @@
         "Visible": "Visible",
         "Activer filtration auto": "Activate auto filtration",
         "Chauffage, durée max autorisé (en min,0 pour illimité)": "Heating, maximum duration allowed (in min, 0 for unlimited)",
+        "Me prévenir quand mon SPA est à température": "Notify me when my SPA is at temperature",
+        "Commande d'information": "Order information",
         "MAC": "Mac",
         "Wifi version": "Wifi version",
         "ID": "ID",
@@ -57,6 +59,8 @@
     },
     "plugins\/bestway\/core\/class\/bestway.class.php": {
         "Rafraîchir": "Refresh",
+        "Votre SPA": "Your SPA",
+        "vient d\\'atteindre sa température :": "has just reached its temperature:",
         "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>": "No root object found. To create one, go to General -> Object. <br\/> If you do not know what to do or it is the first time you use Jeedom do not hesitate to consult this <a href = \"http : \/\/jeedom.fr\/premier_pas.php \"target =\" _ blank \"> page <\/a>"
     }
 }

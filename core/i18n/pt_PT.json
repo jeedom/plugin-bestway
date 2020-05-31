@@ -34,6 +34,8 @@
         "Visible": "Visivél",
         "Activer filtration auto": "Ativar filtragem automática",
         "Chauffage, durée max autorisé (en min,0 pour illimité)": "Aquecimento, duração máxima permitida (em min, 0 para ilimitado)",
+        "Me prévenir quand mon SPA est à température": "Notifique-me quando meu SPA estiver em temperatura",
+        "Commande d'information": "Informações sobre pedidos",
         "MAC": "MAC",
         "Wifi version": "Versão wifi",
         "ID": "ID",
@@ -57,6 +59,8 @@
     },
     "plugins\/bestway\/core\/class\/bestway.class.php": {
         "Rafraîchir": "Legal",
+        "Votre SPA": "O seu SPA",
+        "vient d\\'atteindre sa température :": "acaba de atingir sua temperatura:",
         "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>": "Nenhum objeto raiz encontrado. Para criar um, vá para Geral -> Objeto. <br\/> Se você não sabe o que fazer ou é a primeira vez que utiliza o Jeedom, não hesite em consultar esta <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">página<\/a>"
     }
 }

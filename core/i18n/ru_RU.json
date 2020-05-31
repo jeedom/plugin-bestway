@@ -34,6 +34,8 @@
         "Visible": "Видимый",
         "Activer filtration auto": "",
         "Chauffage, durée max autorisé (en min,0 pour illimité)": "",
+        "Me prévenir quand mon SPA est à température": "",
+        "Commande d'information": "",
         "MAC": "макинтош",
         "Wifi version": "",
         "ID": "Идентификатор",
@@ -57,6 +59,8 @@
     },
     "plugins\/bestway\/core\/class\/bestway.class.php": {
         "Rafraîchir": "Обновить",
+        "Votre SPA": "",
+        "vient d\\'atteindre sa température :": "",
         "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>": ""
     }
 }
