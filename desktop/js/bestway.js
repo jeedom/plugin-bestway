@@ -15,6 +15,19 @@
 * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
 */
 
+$("body").on('click',".listCmdAction", function () {
+  var el = $(this).closest('.form-group').find('.eqLogicAttr');
+  if($(this).attr('data-subType')){
+    jeedom.cmd.getSelectModal({cmd: {type: 'action',subType:$(this).attr('data-subType')}}, function (result) {
+      el.value(result.human);
+    });
+  }else{
+    jeedom.cmd.getSelectModal({cmd: {type: 'action'}}, function (result) {
+      el.value(result.human);
+    });
+  }
+});
+
 $('#bt_syncBestway').off('click').on('click',function(){
   $.ajax({
     type: "POST",

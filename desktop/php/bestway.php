@@ -110,12 +110,12 @@ $eqLogics = eqLogic::byType($plugin->getId());
 								<div class="form-group">
 									<label class="col-sm-3 control-label">{{Me prévenir quand mon SPA est à température}}</label>
 									<div class="col-sm-3">
-										<input  class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="notify::targetTemp" />
+										<input type="checkbox" class="eqLogicAttr" data-l1key="configuration" data-l2key="notify::targetTemp" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">{{Commande d'information}}</label>
-									<div class="col-sm-3">
+									<div class="col-sm-6">
 										<div class="input-group">
 											<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="info::cmd"/>
 											<span class="input-group-btn">
