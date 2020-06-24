@@ -388,7 +388,7 @@ class bestway extends eqLogic {
     }
     if($this->getConfiguration('notify::targetTemp') == 1 && $this->getConfiguration('info::cmd') != ''){
       if($data['attr']['heat_power'] == 1 && $data['attr']['heat_temp_reach'] == 1){
-        if((strtotime('now') - $this->getCache('lastNotifyHeat')) < (60*60*24)){
+        if((strtotime('now') - $this->getCache('lastNotifyHeat',0)) > (60*60*24)){
           $this->setCache('lastNotifyHeat',strtotime('now'));
           $cmd = cmd::byId(str_replace('#','',$this->getConfiguration('info::cmd')));
           if(is_object($cmd)){
