@@ -58,11 +58,6 @@ class bestway extends eqLogic {
       'start' => 'first day of january this year',
       'end' => 'now',
     ),
-    'Y-1' => array(
-      'name' => 'A-1',
-      'start' => 'first day of january last year',
-      'end' => 'last day of december last year 01:00:00',
-    ),
   );
   
   /*     * ***********************Methode static*************************** */
@@ -214,19 +209,24 @@ class bestway extends eqLogic {
     }
     config::save('savePeriod', $_period, 'bestway');
     if($_object_id == null){
-      $object = jeeObject::rootObject();
+      $objects = jeeObject::all();
+      $bestways = array();
+      foreach ($objects as $object) {
+        $bestways = array_merge($bestways,$object->getEqLogic(true, false, 'bestway'));
+      }
     }else{
       $object = jeeObject::byId($_object_id);
+      $child_object = jeeObject::buildTree($object);
+      $bestways = array();
+      $bestways = array_merge($bestways,$object->getEqLogic(true, false, 'bestway'));
+      foreach ($child_object as $child) {
+        $bestways = array_merge($bestways,$child->getEqLogic(true, false, 'bestway'));
+      }
     }
     if (!is_object($object)) {
       throw new Exception('{{Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br/> Si vous ne savez pas quoi faire ou que c\'est la premiere fois que vous utilisez Jeedom n\'hésitez pas a consulter cette <a href="http://jeedom.fr/premier_pas.php" target="_blank">page</a>}}');
     }
-    $child_object = jeeObject::buildTree($object);
-    $bestways = array();
-    $bestways = array_merge($bestways,$object->getEqLogic(true, false, 'bestway'));
-    foreach ($child_object as $child) {
-      $bestways = array_merge($bestways,$child->getEqLogic(true, false, 'bestway'));
-    }
+    
     $return = array('bestways' => array(),'graphData' => array());
     $return['graphData']['day'] = array('start' => date('Y-m-d H:i:s', strtotime(self::$_period[$_period]['start'])), 'end' => date('Y-m-d H:i:s', strtotime(self::$_period[$_period]['end'])));
     foreach ($bestways as $bestway) {
