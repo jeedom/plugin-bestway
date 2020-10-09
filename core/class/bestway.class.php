@@ -22,6 +22,8 @@ require_once __DIR__  . '/../../../../core/php/core.inc.php';
 class bestway extends eqLogic {
   /*     * *************************Attributs****************************** */
   
+  public static $_encryptConfigKey = array('password');
+  
   public static $_period = array(
     'D' => array(
       'name' => 'J',
