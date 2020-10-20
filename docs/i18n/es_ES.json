@@ -1,0 +1,13 @@
+{
+    "index.md": {
+        "Plugin template": "Plantilla de complemento",
+        "La documentation pour utiliser le template de plugin ce trouve": "La documentación para usar la plantilla de complemento se encuentra",
+        " ici.": " aquí.",
+        " ici?": " aquí?",
+        "ici ": "aquí ",
+        " ici]": " aquí]",
+        "[ici]": "[aquí]",
+        "*ici*": "*aquí*",
+        " ici*": " aquí*"
+    }
+}

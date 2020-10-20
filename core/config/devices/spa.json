@@ -7,9 +7,7 @@
         "name": "Température",
         "type": "info",
         "subtype": "numeric",
-        "display": {
-          "generic_type": "TEMPERATURE"
-        },
+        "generic_type": "TEMPERATURE",
         "template" :{
           "dashboard" :"line",
           "mobile" :"line"
@@ -23,8 +21,11 @@
         "name": "Thermostat",
         "type": "info",
         "subtype": "numeric",
+        "generic_type": "THERMOSTAT_SETPOINT",
         "display": {
-          "generic_type": "THERMOSTAT_SETPOINT"
+          "parameters" : {
+            "step" : 1
+          }
         },
         "unite": "°C",
         "isVisible": 0,
@@ -35,9 +36,7 @@
         "name": "Filtration",
         "type": "info",
         "subtype": "binary",
-        "display": {
-          "generic_type": "SET_TEMPERATURE"
-        },
+        "generic_type": "SET_TEMPERATURE",
         "isVisible": 0,
         "isHistorized": 1,
         "logicalId": "filter_power"
@@ -46,9 +45,7 @@
         "name": "Chauffage",
         "type": "info",
         "subtype": "binary",
-        "display": {
-          "generic_type": "DONT"
-        },
+        "generic_type": "DONT",
         "isVisible": 0,
         "isHistorized": 1,
         "logicalId": "heat_power"
@@ -57,9 +54,7 @@
         "name": "Etat",
         "type": "info",
         "subtype": "binary",
-        "display": {
-          "generic_type": "ENERGY_STATE"
-        },
+        "generic_type": "ENERGY_STATE",
         "isVisible": 0,
         "isHistorized": 1,
         "logicalId": "power"
@@ -68,9 +63,7 @@
         "name": "Bulles",
         "type": "info",
         "subtype": "binary",
-        "display": {
-          "generic_type": "DONT"
-        },
+        "generic_type": "DONT",
         "isVisible": 0,
         "isHistorized": 1,
         "logicalId": "wave_power"
@@ -79,9 +72,7 @@
         "name": "Bulles On",
         "type": "action",
         "subtype": "other",
-        "display": {
-          "generic_type": "DONT"
-        },
+        "generic_type": "DONT",
         "template" :{
           "dashboard" :"bestway::wave",
           "mobile" :"bestway::wave"
@@ -98,9 +89,7 @@
         "name": "Bulles Off",
         "type": "action",
         "subtype": "other",
-        "display": {
-          "generic_type": "DONT"
-        },
+        "generic_type": "DONT",
         "template" :{
           "dashboard" :"bestway::wave",
           "mobile" :"bestway::wave"
@@ -117,9 +106,7 @@
         "name": "Filtration On",
         "type": "action",
         "subtype": "other",
-        "display": {
-          "generic_type": "DONT"
-        },
+        "generic_type": "DONT",
         "template" :{
           "dashboard" :"bestway::filter",
           "mobile" :"bestway::filter"
@@ -136,9 +123,7 @@
         "name": "Filtration Off",
         "type": "action",
         "subtype": "other",
-        "display": {
-          "generic_type": "DONT"
-        },
+        "generic_type": "DONT",
         "template" :{
           "dashboard" :"bestway::filter",
           "mobile" :"bestway::filter"
@@ -155,9 +140,7 @@
         "name": "Chauffage On",
         "type": "action",
         "subtype": "other",
-        "display": {
-          "generic_type": "DONT"
-        },
+        "generic_type": "DONT",
         "template" :{
           "dashboard" :"bestway::heat",
           "mobile" :"bestway::heat"
@@ -174,9 +157,7 @@
         "name": "Chauffage Off",
         "type": "action",
         "subtype": "other",
-        "display": {
-          "generic_type": "DONT"
-        },
+        "generic_type": "DONT",
         "template" :{
           "dashboard" :"bestway::heat",
           "mobile" :"bestway::heat"
@@ -193,9 +174,7 @@
         "name": "Power On",
         "type": "action",
         "subtype": "other",
-        "display": {
-          "generic_type": "ENERGY_ON"
-        },
+        "generic_type": "ENERGY_ON",
         "template" :{
           "dashboard" :"bestway::state",
           "mobile" :"bestway::state"
@@ -212,9 +191,7 @@
         "name": "Power Off",
         "type": "action",
         "subtype": "other",
-        "display": {
-          "generic_type": "ENERGY_OFF"
-        },
+        "generic_type": "ENERGY_OFF",
         "template" :{
           "dashboard" :"bestway::state",
           "mobile" :"bestway::state"
@@ -231,9 +208,7 @@
         "name": "Consigne",
         "type": "action",
         "subtype": "slider",
-        "display": {
-          "generic_type": "THERMOSTAT_SET_SETPOINT"
-        },
+        "generic_type": "THERMOSTAT_SET_SETPOINT",
         "template" :{
           "dashboard" :"button",
           "mobile" :"button"

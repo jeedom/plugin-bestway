@@ -22,7 +22,45 @@ require_once __DIR__  . '/../../../../core/php/core.inc.php';
 class bestway extends eqLogic {
   /*     * *************************Attributs****************************** */
   
+  public static $_encryptConfigKey = array('password');
   
+  public static $_period = array(
+    'D' => array(
+      'name' => 'J',
+      'start' => 'midnight',
+      'end' => 'now',
+    ),
+    'D-1' => array(
+      'name' => 'J-1',
+      'start' => '-1 day midnight +1 second',
+      'end' => 'today midnight -1 second',
+    ),
+    'W' => array(
+      'name' => 'S',
+      'start' => 'monday this week',
+      'end' => 'now',
+    ),
+    'W-1' => array(
+      'name' => 'S-1',
+      'start' => 'monday this week -7 days',
+      'end' => 'last sunday 01:00:00',
+    ),
+    'M' => array(
+      'name' => 'M',
+      'start' => 'first day of this month',
+      'end' => 'now',
+    ),
+    'M-1' => array(
+      'name' => 'M-1',
+      'start' => 'first day of previous month',
+      'end' => 'last day of previous month 01:00:00',
+    ),
+    'Y' => array(
+      'name' => 'A',
+      'start' => 'first day of january this year',
+      'end' => 'now',
+    ),
+  );
   
   /*     * ***********************Methode static*************************** */
   
@@ -161,9 +199,85 @@ class bestway extends eqLogic {
     $heat_cmd = $bestway->getCmd('info','heat_power');
     if($heat_cmd->execCmd() == 1){
       log::add('bestway','debug',$bestway->getHumanName().' Heating is on do not power off filtration');
+      return;
     }
     log::add('bestway','debug',$bestway->getHumanName().' Power off filtration');
     $bestway->getCmd('action','setFilterOff')->execCmd();
+  }
+  
+  public static function generatePanel($_version = 'dashboard',$_object_id = null, $_period = 'D'){
+    if ($_period == '') {
+      $_period = 'D';
+    }
+    config::save('savePeriod', $_period, 'bestway');
+    if($_object_id == null){
+      $objects = jeeObject::all();
+      $bestways = array();
+      foreach ($objects as $object) {
+        $bestways = array_merge($bestways,$object->getEqLogic(true, false, 'bestway'));
+      }
+    }else{
+      $object = jeeObject::byId($_object_id);
+      $child_object = jeeObject::buildTree($object);
+      $bestways = array();
+      $bestways = array_merge($bestways,$object->getEqLogic(true, false, 'bestway'));
+      foreach ($child_object as $child) {
+        $bestways = array_merge($bestways,$child->getEqLogic(true, false, 'bestway'));
+      }
+    }
+    if (!is_object($object)) {
+      throw new Exception('{{Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br/> Si vous ne savez pas quoi faire ou que c\'est la premiere fois que vous utilisez Jeedom n\'hésitez pas a consulter cette <a href="http://jeedom.fr/premier_pas.php" target="_blank">page</a>}}');
+    }
+    
+    $return = array('bestways' => array(),'graphData' => array());
+    $return['graphData']['day'] = array('start' => date('Y-m-d H:i:s', strtotime(self::$_period[$_period]['start'])), 'end' => date('Y-m-d H:i:s', strtotime(self::$_period[$_period]['end'])));
+    foreach ($bestways as $bestway) {
+      $return['bestways'][$bestway->getId()] = array();
+      $return['bestways'][$bestway->getId()]['eqLogic'] = array(
+        'name' => $bestway->getName(),
+        'id' => $bestway->getId()
+      );
+      $return['bestways'][$bestway->getId()]['html'] = $bestway->toHtml($_version);
+      
+      $cmd_filter_power = $bestway->getCmd('info','filter_power');
+      $cmd_filter_power->setDisplay('graphType', 'area');
+      $cmd_filter_power->save();
+      
+      $cmd_temp_now = $bestway->getCmd('info','temp_now');
+      $cmd_temp_now->setDisplay('graphType', 'area');
+      $cmd_temp_now->save();
+      
+      $cmd_heat_power = $bestway->getCmd('info','heat_power');
+      $cmd_heat_power->setDisplay('graphType', 'area');
+      $cmd_heat_power->save();
+      
+      $cmd_wave_power = $bestway->getCmd('info','wave_power');
+      $cmd_wave_power->setDisplay('graphType', 'area');
+      $cmd_wave_power->save();
+      
+      $cmd_temp_set = $bestway->getCmd('info','temp_set');
+      $cmd_temp_set->setDisplay('graphType', 'line');
+      $cmd_temp_set->save();
+      
+      $return['bestways'][$bestway->getId()]['graph'] = array(
+        'filter_power' => $cmd_filter_power->getId(),
+        'temp_now' => $cmd_temp_now->getId(),
+        'heat_power' => $cmd_heat_power->getId(),
+        'wave_power' => $cmd_wave_power->getId(),
+        'temp_set' => $cmd_temp_set->getId()
+      );
+    }
+    
+    $return['period'] = '<center>';
+    foreach (self::$_period as $key => $value) {
+      if ($_period == $key) {
+        $return['period'] .= '<a class="btn btn-success ui-btn-raised ui-btn-inline bt_changePeriod" data-period="' . $key . '">' . $value['name'] . '</a> ';
+      } else {
+        $return['period'] .= '<a class="btn btn-default ui-btn ui-btn-inline bt_changePeriod" data-period="' . $key . '">' . $value['name'] . '</a> ';
+      }
+    }
+    $return['period'] .= '</center>';
+    return $return;
   }
   
   /*     * *********************Méthodes d'instance************************* */
@@ -272,6 +386,19 @@ class bestway extends eqLogic {
       if(isset($data['attr'][$cmd->getLogicalId()])){
         $value = $data['attr'][$cmd->getLogicalId()];
         $this->checkAndUpdateCmd($cmd, $value,$date);
+      }
+    }
+    if($this->getConfiguration('notify::targetTemp') == 1 && $this->getConfiguration('info::cmd') != ''){
+      if($data['attr']['heat_power'] == 1 && $data['attr']['heat_temp_reach'] == 1){
+        if((strtotime('now') - $this->getCache('lastNotifyHeat',0)) > (60*60*24)){
+          $this->setCache('lastNotifyHeat',strtotime('now'));
+          $cmd = cmd::byId(str_replace('#','',$this->getConfiguration('info::cmd')));
+          if(is_object($cmd)){
+            $cmd->execCmd(array('message' => __('Votre SPA',__FILE__).' '.$this->getHumanName().' '.__('vient d\'atteindre sa température :',__FILE__).' '.$data['attr']['temp_now'].'°C'));
+          }
+        }
+      }else{
+        $this->setCache('lastNotifyHeat',0);
       }
     }
   }

@@ -1,0 +1,66 @@
+{
+    "plugins\/bestway\/plugin_info\/configuration.php": {
+        "Localisation": "",
+        "Europe": "",
+        "Chine": "",
+        "Etats-Unis": "",
+        "Nom d'utilisateur": "Nama pemakai",
+        "Mot de passe": "Password"
+    },
+    "plugins\/bestway\/desktop\/php\/panel.php": {
+        "401 - Accès non autorisé": "401 - Akses tidak sah",
+        "Liste objets": "Daftar objek",
+        "Rechercher": "Pencarian"
+    },
+    "plugins\/bestway\/desktop\/php\/bestway.php": {
+        "401 - Accès non autorisé": "401 - Akses tidak sah",
+        "Gestion": "Manajemen",
+        "Configuration": "Konfigurasi",
+        "Synchroniser": "Menyinkronkan",
+        "Mes équipements Bestway": "",
+        "Rechercher": "Pencarian",
+        "Configuration avancée": "Konfigurasi lanjutan",
+        "Dupliquer": "Duplikat",
+        "Sauvegarder": "Menyimpan",
+        "Supprimer": "Menghapus",
+        "Equipement": "Peralatan",
+        "Commandes": "Perintah",
+        "Nom de l'équipement Bestway": "",
+        "Nom de l'équipement template": "Nama peralatan contoh",
+        "Objet parent": "Objek induk",
+        "Aucun": "Tak ada",
+        "Catégorie": "Kategori",
+        "Activer": "Mengaktifkan",
+        "Visible": "Terlihat",
+        "Activer filtration auto": "",
+        "Chauffage, durée max autorisé (en min,0 pour illimité)": "",
+        "Me prévenir quand mon SPA est à température": "",
+        "Commande d'information": "",
+        "MAC": "Mac",
+        "Wifi version": "",
+        "ID": "",
+        "Modèle": "Model",
+        "Nom": "Nama",
+        "Type": "Jenis",
+        "Action": "Tindakan"
+    },
+    "plugins\/bestway\/desktop\/js\/panel.js": {
+        "Historique": "Historis"
+    },
+    "plugins\/bestway\/desktop\/js\/bestway.js": {
+        "Nom": "Nama",
+        "Afficher": "Memenitikan",
+        "Historiser": "Historicize",
+        "Tester": "Coba"
+    },
+    "plugins\/bestway\/core\/ajax\/bestway.ajax.php": {
+        "401 - Accès non autorisé": "401 - Akses tidak sah",
+        "Aucune méthode correspondante à : ": "Aucune methode correspondante à :"
+    },
+    "plugins\/bestway\/core\/class\/bestway.class.php": {
+        "Rafraîchir": "Dingin",
+        "Votre SPA": "",
+        "vient d\\'atteindre sa température :": "",
+        "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>": ""
+    }
+}

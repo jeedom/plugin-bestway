@@ -1,0 +1,13 @@
+{
+    "index.md": {
+        "Plugin template": "Modelo de plug-in",
+        "La documentation pour utiliser le template de plugin ce trouve": "A documentação para usar o modelo de plug-in é encontrada",
+        " ici.": " aqui.",
+        " ici?": " aqui?",
+        "ici ": "aqui ",
+        " ici]": " aqui]",
+        "[ici]": "[aqui]",
+        "*ici*": "*aqui*",
+        " ici*": " aqui*"
+    }
+}

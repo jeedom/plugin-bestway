@@ -20,11 +20,24 @@ try {
   require_once dirname(__FILE__) . '/../../../../core/php/core.inc.php';
   include_file('core', 'authentification', 'php');
   
-  if (!isConnect('admin')) {
+  if (!isConnect()) {
     throw new Exception(__('401 - Accès non autorisé', __FILE__));
   }
   
   ajax::init();
+  
+  if (init('action') == 'getPanel') {
+    $period = init('period');
+    if (trim($period) == '') {
+      $period = config::byKey('savePeriod', 'bestway','D');
+    }
+    $return = bestway::generatePanel(init('version'), init('object_id',null),$period);
+    ajax::success($return);
+  }
+  
+  if (!isConnect('admin')) {
+    throw new Exception(__('401 - Accès non autorisé', __FILE__));
+  }
   
   if (init('action') == 'sync') {
     bestway::sync();

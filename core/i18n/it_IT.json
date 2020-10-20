@@ -1,0 +1,66 @@
+{
+    "plugins\/bestway\/plugin_info\/configuration.php": {
+        "Localisation": "",
+        "Europe": "",
+        "Chine": "",
+        "Etats-Unis": "",
+        "Nom d'utilisateur": "Nome utente",
+        "Mot de passe": "Password"
+    },
+    "plugins\/bestway\/desktop\/php\/panel.php": {
+        "401 - Accès non autorisé": "401 - Accesso non autorizzato",
+        "Liste objets": "Elenco oggetti",
+        "Rechercher": "Ricercare"
+    },
+    "plugins\/bestway\/desktop\/php\/bestway.php": {
+        "401 - Accès non autorisé": "401 - Accesso non autorizzato",
+        "Gestion": "Gestione",
+        "Configuration": "Configurazione",
+        "Synchroniser": "Sincronizzare",
+        "Mes équipements Bestway": "",
+        "Rechercher": "Ricercare",
+        "Configuration avancée": "Configurazione avanzata",
+        "Dupliquer": "Duplicato",
+        "Sauvegarder": "Salva",
+        "Supprimer": "Rimuovere",
+        "Equipement": "Dispositivo",
+        "Commandes": "Comandi",
+        "Nom de l'équipement Bestway": "",
+        "Nom de l'équipement template": "Nome di attrezzature template",
+        "Objet parent": "Oggetto padre",
+        "Aucun": "Nessuno",
+        "Catégorie": "Categoria",
+        "Activer": "Attivare",
+        "Visible": "Visibile",
+        "Activer filtration auto": "",
+        "Chauffage, durée max autorisé (en min,0 pour illimité)": "",
+        "Me prévenir quand mon SPA est à température": "",
+        "Commande d'information": "",
+        "MAC": "",
+        "Wifi version": "",
+        "ID": "",
+        "Modèle": "Modello",
+        "Nom": "Nome",
+        "Type": "Tipo",
+        "Action": "Azione"
+    },
+    "plugins\/bestway\/desktop\/js\/panel.js": {
+        "Historique": "Storico"
+    },
+    "plugins\/bestway\/desktop\/js\/bestway.js": {
+        "Nom": "Nome",
+        "Afficher": "Mostra",
+        "Historiser": "Storicizza",
+        "Tester": "Prova"
+    },
+    "plugins\/bestway\/core\/ajax\/bestway.ajax.php": {
+        "401 - Accès non autorisé": "401 - Accesso non autorizzato",
+        "Aucune méthode correspondante à : ": "Nessun metodo corrispondente a:"
+    },
+    "plugins\/bestway\/core\/class\/bestway.class.php": {
+        "Rafraîchir": "Aggiorna",
+        "Votre SPA": "",
+        "vient d\\'atteindre sa température :": "",
+        "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>": ""
+    }
+}
