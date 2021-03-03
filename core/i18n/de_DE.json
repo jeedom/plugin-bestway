@@ -62,5 +62,8 @@
         "Votre SPA": "Ihr SPA",
         "vient d\\'atteindre sa température :": "hat gerade seine Temperatur erreicht:",
         "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>": "Kein Stammobjekt gefunden. Um eine zu erstellen, gehen Sie zu Allgemein -> Objekt. <br\/> Wenn Sie nicht wissen, was Sie tun sollen, oder wenn Sie Jeedom zum ersten Mal verwenden, zögern Sie nicht, diese <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">Seite<\/a> zu konsultieren"
+    },
+    "info.json": {
+        "Plugin pour piloter les équipements connecté Bestway. Pour le moment seul le SPA Milan a été testé (seul spa connecté de la gamme).": "Plugin zur Steuerung von mit Bestway verbundenen Geräten. Im Moment wurde nur das SPA Milan getestet (das einzige angeschlossene Spa im Sortiment)"
     }
 }
