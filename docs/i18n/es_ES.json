@@ -1,13 +1,28 @@
 {
+    "changelog.md": {
+        "Changelog Bestway": "Registro de cambios Bestway",
+        "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte": "Como recordatorio, si no hay información sobre la actualización es porque se trata solo de la actualización de la documentación, la traducción o el texto",
+        "03\/03\/2021": "03\/03\/2021",
+        "Mise à jour de la documentation": "Actualización de documentación",
+        " IMPORTANT.": " IMPORTANTE.",
+        " IMPORTANT?": " IMPORTANTE?",
+        "IMPORTANT ": "IMPORTANTE ",
+        " IMPORTANT]": " IMPORTANTE]",
+        "[IMPORTANT]": "[IMPORTANTE]",
+        "*IMPORTANT*": "*IMPORTANTE*",
+        " IMPORTANT*": " IMPORTANTE*"
+    },
     "index.md": {
-        "Plugin template": "Plantilla de complemento",
-        "La documentation pour utiliser le template de plugin ce trouve": "La documentación para usar la plantilla de complemento se encuentra",
-        " ici.": " aquí.",
-        " ici?": " aquí?",
-        "ici ": "aquí ",
-        " ici]": " aquí]",
-        "[ici]": "[aquí]",
-        "*ici*": "*aquí*",
-        " ici*": " aquí*"
+        "Plugin Bestway": "Complemento Bestway",
+        "Plugin permetant de controler le Bestway Lazy Spa Milan à travers Jeedom": "Complemento que permite controlar Bestway Lazy Spa Milan a través de Jeedom",
+        "Il permet de gerer automatiquement la filtration et la durée de celle-ci en fonction de la température de l'eau": "Gestiona automáticamente la filtración y su duración según la temperatura del agua",
+        "Il suffit de mettre vos identifiants Bestway": "Solo ingrese sus credenciales de Bestway",
+        " Configuration.": " Configuración.",
+        " Configuration?": " Configuración?",
+        "Configuration ": "Configuración ",
+        " Configuration]": " Configuración]",
+        "[Configuration]": "[Configuración]",
+        "*Configuration*": "*Configuración*",
+        " Configuration*": " Configuración*"
     }
 }
