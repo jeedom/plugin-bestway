@@ -1,7 +1,16 @@
 {
+    "changelog.md": {
+        "Changelog Bestway": "Changelog Bestway",
+        "IMPORTANT": "IMPORTANT",
+        "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte": "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte",
+        "03\/03\/2021": "03\/03\/2021",
+        "Mise à jour de la documentation": "Mise à jour de la documentation"
+    },
     "index.md": {
-        "Plugin template": "Plugin template",
-        "ici": "ici",
-        "La documentation pour utiliser le template de plugin ce trouve": "La documentation pour utiliser le template de plugin ce trouve"
+        "Plugin Bestway": "Plugin Bestway",
+        "Plugin permetant de controler le Bestway Lazy Spa Milan à travers Jeedom": "Plugin permetant de controler le Bestway Lazy Spa Milan à travers Jeedom",
+        "Il permet de gerer automatiquement la filtration et la durée de celle-ci en fonction de la température de l'eau": "Il permet de gerer automatiquement la filtration et la durée de celle-ci en fonction de la température de l'eau",
+        "Configuration": "Configuration",
+        "Il suffit de mettre vos identifiants Bestway": "Il suffit de mettre vos identifiants Bestway"
     }
 }

@@ -1,9 +1,9 @@
 {
     "plugins\/bestway\/plugin_info\/configuration.php": {
-        "Localisation": "",
-        "Europe": "",
-        "Chine": "",
-        "Etats-Unis": "",
+        "Localisation": "Localisation",
+        "Europe": "Europe",
+        "Chine": "Chine",
+        "Etats-Unis": "Etats-Unis",
         "Nom d'utilisateur": "Имя пользователя",
         "Mot de passe": "Пароль"
     },
@@ -17,7 +17,7 @@
         "Gestion": "Управление",
         "Configuration": "Конфигурация",
         "Synchroniser": "Синхронизировать",
-        "Mes équipements Bestway": "",
+        "Mes équipements Bestway": "Mes équipements Bestway",
         "Rechercher": "поиск",
         "Configuration avancée": "Расширенные настройки",
         "Dupliquer": "дубликат",
@@ -25,19 +25,19 @@
         "Supprimer": "удаление",
         "Equipement": "Оборудование",
         "Commandes": "Команды",
-        "Nom de l'équipement Bestway": "",
+        "Nom de l'équipement Bestway": "Nom de l'équipement Bestway",
         "Nom de l'équipement template": "Название шаблона оборудования",
         "Objet parent": "Родительский объект",
         "Aucun": "Нет",
         "Catégorie": "категория",
         "Activer": "активировать",
         "Visible": "Видимый",
-        "Activer filtration auto": "",
-        "Chauffage, durée max autorisé (en min,0 pour illimité)": "",
-        "Me prévenir quand mon SPA est à température": "",
-        "Commande d'information": "",
+        "Activer filtration auto": "Activer filtration auto",
+        "Chauffage, durée max autorisé (en min,0 pour illimité)": "Chauffage, durée max autorisé (en min,0 pour illimité)",
+        "Me prévenir quand mon SPA est à température": "Me prévenir quand mon SPA est à température",
+        "Commande d'information": "Commande d'information",
         "MAC": "макинтош",
-        "Wifi version": "",
+        "Wifi version": "Wifi version",
         "ID": "Идентификатор",
         "Modèle": "Модель",
         "Nom": "Имя",
@@ -59,11 +59,11 @@
     },
     "plugins\/bestway\/core\/class\/bestway.class.php": {
         "Rafraîchir": "Обновить",
-        "Votre SPA": "",
-        "vient d\\'atteindre sa température :": "",
-        "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>": ""
+        "Votre SPA": "Votre SPA",
+        "vient d\\'atteindre sa température :": "vient d\\'atteindre sa température :",
+        "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>": "Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br\/> Si vous ne savez pas quoi faire ou que c\\'est la premiere fois que vous utilisez Jeedom n\\'hésitez pas a consulter cette <a href=\"http:\/\/jeedom.fr\/premier_pas.php\" target=\"_blank\">page<\/a>"
     },
     "info.json": {
-        "Plugin pour piloter les équipements connecté Bestway. Pour le moment seul le SPA Milan a été testé (seul spa connecté de la gamme).": ""
+        "Plugin pour piloter les équipements connecté Bestway. Pour le moment seul le SPA Milan a été testé (seul spa connecté de la gamme).": "Plugin pour piloter les équipements connecté Bestway. Pour le moment seul le SPA Milan a été testé (seul spa connecté de la gamme)"
     }
 }
