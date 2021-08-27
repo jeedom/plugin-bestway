@@ -1,13 +1,28 @@
 {
+    "changelog.md": {
+        "Changelog Bestway": "Changelog Bestway",
+        "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte": "Zur Erinnerung: Wenn zu dem Update keine Informationen vorhanden sind, handelt es sich nur um die Aktualisierung von Dokumentation, Übersetzung oder Text",
+        "03\/03\/2021": "03\/03\/2021",
+        "Mise à jour de la documentation": "Aktualisierung der Dokumentation",
+        " IMPORTANT.": " WICHTIG.",
+        " IMPORTANT?": " WICHTIG?",
+        "IMPORTANT ": "WICHTIG ",
+        " IMPORTANT]": " WICHTIG]",
+        "[IMPORTANT]": "[WICHTIG]",
+        "*IMPORTANT*": "*WICHTIG*",
+        " IMPORTANT*": " WICHTIG*"
+    },
     "index.md": {
-        "Plugin template": "Plugin Vorlage",
-        "La documentation pour utiliser le template de plugin ce trouve": "Die Dokumentation zur Verwendung der Plugin-Vorlage finden Sie",
-        " ici.": " hier.",
-        " ici?": " hier?",
-        "ici ": "hier ",
-        " ici]": " hier]",
-        "[ici]": "[hier]",
-        "*ici*": "*hier*",
-        " ici*": " hier*"
+        "Plugin Bestway": "Bestway Plugin",
+        "Plugin permetant de controler le Bestway Lazy Spa Milan à travers Jeedom": "Plugin zur Steuerung des Bestway Lazy Spa Milan über Jeedom",
+        "Il permet de gerer automatiquement la filtration et la durée de celle-ci en fonction de la température de l'eau": "Es verwaltet automatisch die Filtration und ihre Dauer entsprechend der Wassertemperatur",
+        "Il suffit de mettre vos identifiants Bestway": "Geben Sie einfach Ihre Bestway-Anmeldeinformationen ein",
+        " Configuration.": " Aufbau.",
+        " Configuration?": " Aufbau?",
+        "Configuration ": "Aufbau ",
+        " Configuration]": " Aufbau]",
+        "[Configuration]": "[Aufbau]",
+        "*Configuration*": "*Aufbau*",
+        " Configuration*": " Aufbau*"
     }
 }

@@ -1,13 +1,28 @@
 {
+    "changelog.md": {
+        "Changelog Bestway": "Changelog Bestway",
+        "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte": "Recorde-se que, se não existe informação sobre a atualização, é porque se trata apenas de atualização de documentação, tradução ou texto",
+        "03\/03\/2021": "03\/03\/2021",
+        "Mise à jour de la documentation": "Atualização de documentação",
+        " IMPORTANT.": " IMPORTANTE.",
+        " IMPORTANT?": " IMPORTANTE?",
+        "IMPORTANT ": "IMPORTANTE ",
+        " IMPORTANT]": " IMPORTANTE]",
+        "[IMPORTANT]": "[IMPORTANTE]",
+        "*IMPORTANT*": "*IMPORTANTE*",
+        " IMPORTANT*": " IMPORTANTE*"
+    },
     "index.md": {
-        "Plugin template": "Modelo de plug-in",
-        "La documentation pour utiliser le template de plugin ce trouve": "A documentação para usar o modelo de plug-in é encontrada",
-        " ici.": " aqui.",
-        " ici?": " aqui?",
-        "ici ": "aqui ",
-        " ici]": " aqui]",
-        "[ici]": "[aqui]",
-        "*ici*": "*aqui*",
-        " ici*": " aqui*"
+        "Plugin Bestway": "Plugin Bestway",
+        "Plugin permetant de controler le Bestway Lazy Spa Milan à travers Jeedom": "Plugin que permite controlar o Bestway Lazy Spa Milan através do Jeedom",
+        "Il permet de gerer automatiquement la filtration et la durée de celle-ci en fonction de la température de l'eau": "Gerencia automaticamente a filtragem e sua duração de acordo com a temperatura da água",
+        "Il suffit de mettre vos identifiants Bestway": "Basta colocar suas credenciais Bestway",
+        " Configuration.": " Configuração.",
+        " Configuration?": " Configuração?",
+        "Configuration ": "Configuração ",
+        " Configuration]": " Configuração]",
+        "[Configuration]": "[Configuração]",
+        "*Configuration*": "*Configuração*",
+        " Configuration*": " Configuração*"
     }
 }

@@ -39,7 +39,10 @@
         "generic_type": "SET_TEMPERATURE",
         "isVisible": 0,
         "isHistorized": 1,
-        "logicalId": "filter_power"
+        "logicalId": "filter_power",
+        "configuration": {
+          "repeatEventManagement": "always"
+        }
       },
       {
         "name": "Chauffage",
@@ -48,7 +51,10 @@
         "generic_type": "DONT",
         "isVisible": 0,
         "isHistorized": 1,
-        "logicalId": "heat_power"
+        "logicalId": "heat_power",
+        "configuration": {
+          "repeatEventManagement": "always"
+        }
       },
       {
         "name": "Etat",
@@ -57,7 +63,10 @@
         "generic_type": "ENERGY_STATE",
         "isVisible": 0,
         "isHistorized": 1,
-        "logicalId": "power"
+        "logicalId": "power",
+        "configuration": {
+          "repeatEventManagement": "always"
+        }
       },
       {
         "name": "Bulles",
@@ -66,7 +75,10 @@
         "generic_type": "DONT",
         "isVisible": 0,
         "isHistorized": 1,
-        "logicalId": "wave_power"
+        "logicalId": "wave_power",
+        "configuration": {
+          "repeatEventManagement": "always"
+        }
       },
       {
         "name": "Bulles On",
