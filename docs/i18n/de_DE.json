@@ -2,6 +2,8 @@
     "changelog.md": {
         "Changelog Bestway": "Changelog Bestway",
         "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte": "Zur Erinnerung: Wenn zu dem Update keine Informationen vorhanden sind, handelt es sich nur um die Aktualisierung von Dokumentation, Übersetzung oder Text",
+        "27\/08\/2021": "27.08.2021",
+        "Correction d'un bug sur la gestion du chauffage du spa": "Korrektur eines Fehlers bei der Verwaltung der Spa-Heizung",
         "03\/03\/2021": "03\/03\/2021",
         "Mise à jour de la documentation": "Aktualisierung der Dokumentation",
         " IMPORTANT.": " WICHTIG.",
@@ -17,6 +19,8 @@
         "Plugin permetant de controler le Bestway Lazy Spa Milan à travers Jeedom": "Plugin zur Steuerung des Bestway Lazy Spa Milan über Jeedom",
         "Il permet de gerer automatiquement la filtration et la durée de celle-ci en fonction de la température de l'eau": "Es verwaltet automatisch die Filtration und ihre Dauer entsprechend der Wassertemperatur",
         "Il suffit de mettre vos identifiants Bestway": "Geben Sie einfach Ihre Bestway-Anmeldeinformationen ein",
+        "Filtration automatique": "Automatische Filterung",
+        "Si vous cochez la case de gestion de la filtration automatique alors le plugin va lui meme calculer en chaque debut d'heure le temps de filtration necessaire en fonction de la température moyenne de l'eau sur l'heure d'avant (en se basant sur la formule temps filtration en heure = temperature de l'eau \/ 2": "Wenn Sie das Kontrollkästchen Automatische Filterverwaltung aktivieren, berechnet das Plugin zu Beginn jeder Stunde selbst die erforderliche Filterzeit gemäß der durchschnittlichen Wassertemperatur der vorherigen Stunde (basierend auf der Formel Filterzeit in Stunden = Wassertemperatur \/ 2",
         " Configuration.": " Aufbau.",
         " Configuration?": " Aufbau?",
         "Configuration ": "Aufbau ",

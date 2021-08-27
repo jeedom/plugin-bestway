@@ -3,6 +3,8 @@
         "Changelog Bestway": "Changelog Bestway",
         "IMPORTANT": "IMPORTANT",
         "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte": "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte",
+        "27\/08\/2021": "27\/08\/2021",
+        "Correction d'un bug sur la gestion du chauffage du spa": "Correction d'un bug sur la gestion du chauffage du spa",
         "03\/03\/2021": "03\/03\/2021",
         "Mise à jour de la documentation": "Mise à jour de la documentation"
     },
@@ -11,6 +13,8 @@
         "Plugin permetant de controler le Bestway Lazy Spa Milan à travers Jeedom": "Plugin permetant de controler le Bestway Lazy Spa Milan à travers Jeedom",
         "Il permet de gerer automatiquement la filtration et la durée de celle-ci en fonction de la température de l'eau": "Il permet de gerer automatiquement la filtration et la durée de celle-ci en fonction de la température de l'eau",
         "Configuration": "Configuration",
-        "Il suffit de mettre vos identifiants Bestway": "Il suffit de mettre vos identifiants Bestway"
+        "Il suffit de mettre vos identifiants Bestway": "Il suffit de mettre vos identifiants Bestway",
+        "Filtration automatique": "Filtration automatique",
+        "Si vous cochez la case de gestion de la filtration automatique alors le plugin va lui meme calculer en chaque debut d'heure le temps de filtration necessaire en fonction de la température moyenne de l'eau sur l'heure d'avant (en se basant sur la formule temps filtration en heure = temperature de l'eau \/ 2": "Si vous cochez la case de gestion de la filtration automatique alors le plugin va lui meme calculer en chaque debut d'heure le temps de filtration necessaire en fonction de la température moyenne de l'eau sur l'heure d'avant (en se basant sur la formule temps filtration en heure = temperature de l'eau \/ 2"
     }
 }

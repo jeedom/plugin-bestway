@@ -8,3 +8,7 @@ Gestiona automáticamente la filtración y su duración según la temperatura de
 ## Configuración 
 
 Solo ingrese sus credenciales de Bestway
+
+## Filtración automática
+
+Si marca la casilla de gestión automática de la filtración, el complemento calculará al comienzo de cada hora el tiempo de filtración requerido de acuerdo con la temperatura promedio del agua durante la hora anterior (basado en la fórmula tiempo de filtración en horas = temperatura del agua / 2)
