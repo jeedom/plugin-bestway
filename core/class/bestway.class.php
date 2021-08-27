@@ -318,7 +318,7 @@ class bestway extends eqLogic {
   }
   
   public function checkHeating(){
-    if($this->getConfiguration('heating::maxDuration',0) != 0){
+    if($this->getConfiguration('heating::maxDuration',0) == 0){
       return;
     }
     log::add('bestway','debug',$this->getHumanName().' Check heating duration');
