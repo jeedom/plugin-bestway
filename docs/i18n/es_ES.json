@@ -19,6 +19,8 @@
         "Plugin permetant de controler le Bestway Lazy Spa Milan à travers Jeedom": "Complemento que permite controlar Bestway Lazy Spa Milan a través de Jeedom",
         "Il permet de gerer automatiquement la filtration et la durée de celle-ci en fonction de la température de l'eau": "Gestiona automáticamente la filtración y su duración según la temperatura del agua",
         "Il suffit de mettre vos identifiants Bestway": "Solo ingrese sus credenciales de Bestway",
+        "Vous pouvez trouver": "Puedes encontrar",
+        "la liste des modules compatible avec le plugin": "la lista de módulos compatibles con el complemento",
         "Filtration automatique": "Filtración automática",
         "Si vous cochez la case de gestion de la filtration automatique alors le plugin va lui meme calculer en chaque debut d'heure le temps de filtration necessaire en fonction de la température moyenne de l'eau sur l'heure d'avant (en se basant sur la formule temps filtration en heure = temperature de l'eau \/ 2": "Si marca la casilla de gestión automática de la filtración, el complemento calculará al comienzo de cada hora el tiempo de filtración requerido de acuerdo con la temperatura promedio del agua durante la hora anterior (basado en la fórmula tiempo de filtración en horas = temperatura del agua \/ 2",
         " Configuration.": " Configuración.",
@@ -27,6 +29,20 @@
         " Configuration]": " Configuración]",
         "[Configuration]": "[Configuración]",
         "*Configuration*": "*Configuración*",
-        " Configuration*": " Configuración*"
+        " Configuration*": " Configuración*",
+        " Compatibilité.": " Compatibilidad.",
+        " Compatibilité?": " Compatibilidad?",
+        "Compatibilité ": "Compatibilidad ",
+        " Compatibilité]": " Compatibilidad]",
+        "[Compatibilité]": "[Compatibilidad]",
+        "*Compatibilité*": "*Compatibilidad*",
+        " Compatibilité*": " Compatibilidad*",
+        " ici.": " aquí.",
+        " ici?": " aquí?",
+        "ici ": "aquí ",
+        " ici]": " aquí]",
+        "[ici]": "[aquí]",
+        "*ici*": "*aquí*",
+        " ici*": " aquí*"
     }
 }

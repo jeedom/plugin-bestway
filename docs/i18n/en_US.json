@@ -19,6 +19,8 @@
         "Plugin permetant de controler le Bestway Lazy Spa Milan à travers Jeedom": "Plugin allowing to control the Bestway Lazy Spa Milan through Jeedom",
         "Il permet de gerer automatiquement la filtration et la durée de celle-ci en fonction de la température de l'eau": "It automatically manages filtration and its duration according to the water temperature",
         "Il suffit de mettre vos identifiants Bestway": "Just put your Bestway credentials",
+        "Vous pouvez trouver": "You can find",
+        "la liste des modules compatible avec le plugin": "the list of modules compatible with the plugin",
         "Filtration automatique": "Automatic filtration",
         "Si vous cochez la case de gestion de la filtration automatique alors le plugin va lui meme calculer en chaque debut d'heure le temps de filtration necessaire en fonction de la température moyenne de l'eau sur l'heure d'avant (en se basant sur la formule temps filtration en heure = temperature de l'eau \/ 2": "If you check the automatic filtration management box then the plugin will itself calculate at the start of each hour the filtration time required according to the average water temperature over the previous hour (based on on the formula filtration time in hours = water temperature \/ 2",
         " Configuration.": " Configuration.",
@@ -27,6 +29,20 @@
         " Configuration]": " Configuration]",
         "[Configuration]": "[Configuration]",
         "*Configuration*": "*Configuration*",
-        " Configuration*": " Configuration*"
+        " Configuration*": " Configuration*",
+        " Compatibilité.": " Compatibility.",
+        " Compatibilité?": " Compatibility?",
+        "Compatibilité ": "Compatibility ",
+        " Compatibilité]": " Compatibility]",
+        "[Compatibilité]": "[Compatibility]",
+        "*Compatibilité*": "*Compatibility*",
+        " Compatibilité*": " Compatibility*",
+        " ici.": " here.",
+        " ici?": " here?",
+        "ici ": "here ",
+        " ici]": " here]",
+        "[ici]": "[here]",
+        "*ici*": "*here*",
+        " ici*": " here*"
     }
 }

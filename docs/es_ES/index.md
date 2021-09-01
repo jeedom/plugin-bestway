@@ -4,10 +4,13 @@ Complemento que permite controlar Bestway Lazy Spa Milan a través de Jeedom.
 
 Gestiona automáticamente la filtración y su duración según la temperatura del agua
 
-
 ## Configuración 
 
 Solo ingrese sus credenciales de Bestway
+
+## Compatibilité
+
+Puedes encontrar [aquí](https://compatibility.jeedom.com/index.php?v=d&p=home&plugin=bestway) la lista de módulos compatibles con el complemento
 
 ## Filtración automática
 
