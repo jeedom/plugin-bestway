@@ -96,11 +96,27 @@ class bestway extends eqLogic {
       case 'cn':
         return 'https://api.gizwits.com';
         break;
+      case 'newapi':
+        return 'https://mobileapi.lay-z-spa.co.uk/v1';
+        break;
     }
   }
 
   public static function getUserToken() {
     $cache = is_json(cache::byKey('bestway::token')->getValue(), array());
+    if (config::byKey('location', 'bestway') == 'newapi') {
+      if (isset($cache['devices']) && isset($result['devices'][0]) && isset($result['devices'][0]['did'])) {
+        return $cache['devices'][0]['did'];
+      }
+      $request_http = new com_http(self::getBaseApi() . '/auth/login');
+      $request_http->setHeader(array(
+        'Content-Type: application/x-www-form-urlencoded'
+      ));
+      $request_http->setPost('email=' . urlencode(config::byKey('username', 'bestway')) . '&password=' . urlencode(config::byKey('password', 'bestway')));
+      $result = json_decode($request_http->exec(30), true);
+      cache::set('bestway::token', json_encode($result));
+      return $result['devices'][0]['did'];
+    }
     if (isset($cache['expire_at']) && $cache['expire_at'] > strtotime('now')) {
       return $cache['token'];
     }
@@ -140,18 +156,30 @@ class bestway extends eqLogic {
   }
 
   public static function sync() {
-    $devices = self::requestApi('/app/bindings');
+    if (config::byKey('location', 'bestway') == 'newapi') {
+      cache::set('bestway::token', '');
+      self::getUserToken();
+      $devices = is_json(cache::byKey('bestway::token')->getValue(), array());
+    } else {
+      $devices = self::requestApi('/app/bindings');
+    }
     foreach ($devices['devices'] as $device) {
       $eqLogic = self::byLogicalId($device['did'], 'bestway');
       if (!is_object($eqLogic)) {
         $eqLogic = new self();
         $eqLogic->setLogicalId($device['did']);
-        $eqLogic->setName($device['product_name']);
+        if (isset($device['device_name'])) {
+          $eqLogic->setName($device['device_name']);
+        } else {
+          $eqLogic->setName($device['product_name']);
+        }
         $eqLogic->setEqType_name('bestway');
         $eqLogic->setIsVisible(1);
         $eqLogic->setIsEnable(1);
       }
-      $eqLogic->setConfiguration('wifi_soft_version', $device['wifi_soft_version']);
+      if (isset($device['wifi_soft_version'])) {
+        $eqLogic->setConfiguration('wifi_soft_version', $device['wifi_soft_version']);
+      }
       $eqLogic->setConfiguration('mac', $device['mac']);
       $eqLogic->save();
     }

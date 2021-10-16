@@ -27,10 +27,11 @@ if (!isConnect()) {
     <div class="form-group">
       <label class="col-lg-4 control-label">{{Localisation}}</label>
       <div class="col-lg-2">
-        <select class="configKey form-control" data-l1key="location" >
+        <select class="configKey form-control" data-l1key="location">
           <option value="eu">{{Europe}}</option>
           <option value="cn">{{Chine}}</option>
           <option value="us">{{Etats-Unis}}</option>
+          <option value="newapi">{{Nouvelles api (lay-z-spa))}}</option>
         </select>
       </div>
     </div>
@@ -46,6 +47,6 @@ if (!isConnect()) {
         <input type="password" autocomplete="new-password" class="configKey form-control" data-l1key="password" />
       </div>
     </div>
-  </div>
-</fieldset>
+    </div>
+  </fieldset>
 </form>
