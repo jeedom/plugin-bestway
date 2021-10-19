@@ -105,8 +105,8 @@ class bestway extends eqLogic {
   public static function getUserToken() {
     $cache = is_json(cache::byKey('bestway::token')->getValue(), array());
     if (config::byKey('location', 'bestway') == 'newapi') {
-      if (isset($cache['devices']) && isset($result['devices'][0]) && isset($result['devices'][0]['did'])) {
-        return $cache['devices'][0]['did'];
+      if (isset($cache['data']) && isset($result['data']['api_token-bkp'])) {
+        return $result['data']['api_token-bkp'];
       }
       $request_http = new com_http(self::getBaseApi() . '/auth/login');
       $request_http->setHeader(array(
@@ -115,7 +115,7 @@ class bestway extends eqLogic {
       $request_http->setPost('email=' . urlencode(config::byKey('username', 'bestway')) . '&password=' . urlencode(config::byKey('password', 'bestway')));
       $result = json_decode($request_http->exec(30), true);
       cache::set('bestway::token', json_encode($result));
-      return $result['devices'][0]['did'];
+      return $result['data']['api_token-bkp'];
     }
     if (isset($cache['expire_at']) && $cache['expire_at'] > strtotime('now')) {
       return $cache['token'];
@@ -138,11 +138,17 @@ class bestway extends eqLogic {
   }
 
   public static function requestApi($_url, $_post = null) {
-    $request_http = new com_http(self::getBaseApi() . $_url);
-    $request_http->setHeader(array(
-      'X-Gizwits-Application-Id: ' . config::byKey('gizwitsappid', 'bestway'),
-      'X-Gizwits-User-token: ' . self::getUserToken()
-    ));
+    $url = self::getBaseApi() . $_url;
+    if (config::byKey('location', 'bestway') == 'newapi') {
+      $url .= '&api_token=' . self::getUserToken();
+    }
+    $request_http = new com_http($url);
+    if (config::byKey('location', 'bestway') != 'newapi') {
+      $request_http->setHeader(array(
+        'X-Gizwits-Application-Id: ' . config::byKey('gizwitsappid', 'bestway'),
+        'X-Gizwits-User-token: ' . self::getUserToken()
+      ));
+    }
     log::add('bestway', 'debug', 'URL : ' . self::getBaseApi() . $_url);
     if ($_post != null) {
       log::add('bestway', 'debug', 'Post : ' . print_r($_post, true));
@@ -406,7 +412,14 @@ class bestway extends eqLogic {
   }
 
   public function refresh() {
-    $data = self::requestApi('/app/devdata/' . $this->getLogicalId() . '/latest');
+    if (config::byKey('location', 'bestway') == 'newapi') {
+      $data = self::requestApi('/gizwits/status?did=' . $this->getLogicalId());
+      if (isset($data['data'])) {
+        $data = $data['data'];
+      }
+    } else {
+      $data = self::requestApi('/app/devdata/' . $this->getLogicalId() . '/latest');
+    }
     log::add('bestway', 'debug', $this->getHumanName() . ' : ' . json_encode($data));
     $date = date('Y-m-d H:i:s', $data['updated_at']);
     foreach ($this->getCmd('info') as $cmd) {
