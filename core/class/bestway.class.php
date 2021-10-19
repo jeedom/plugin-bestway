@@ -105,8 +105,8 @@ class bestway extends eqLogic {
   public static function getUserToken() {
     $cache = is_json(cache::byKey('bestway::token')->getValue(), array());
     if (config::byKey('location', 'bestway') == 'newapi') {
-      if (isset($cache['data']) && isset($result['data']['api_token-bkp'])) {
-        return $result['data']['api_token-bkp'];
+      if (isset($cache['data']) && isset($result['data']['api_token'])) {
+        return $result['data']['api_token'];
       }
       $request_http = new com_http(self::getBaseApi() . '/auth/login');
       $request_http->setHeader(array(
@@ -115,7 +115,7 @@ class bestway extends eqLogic {
       $request_http->setPost('email=' . urlencode(config::byKey('username', 'bestway')) . '&password=' . urlencode(config::byKey('password', 'bestway')));
       $result = json_decode($request_http->exec(30), true);
       cache::set('bestway::token', json_encode($result));
-      return $result['data']['api_token-bkp'];
+      return $result['data']['api_token'];
     }
     if (isset($cache['expire_at']) && $cache['expire_at'] > strtotime('now')) {
       return $cache['token'];
