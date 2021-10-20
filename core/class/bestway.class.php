@@ -149,15 +149,17 @@ class bestway extends eqLogic {
         'X-Gizwits-User-token: ' . self::getUserToken()
       ));
     }
-    log::add('bestway', 'debug', 'URL : ' . self::getBaseApi() . $_url);
+    log::add('bestway', 'debug', 'URL : ' .  $url);
     if ($_post != null) {
       log::add('bestway', 'debug', 'Post : ' . print_r($_post, true));
       $request_http->setPost($_post);
     }
     $result = json_decode($request_http->exec(30), true);
+    log::add('bestway', 'debug', json_encode($result));
     if (isset($result['error_message'])) {
       throw new \Exception($result['error_message']);
     }
+     
     return $result;
   }
 
