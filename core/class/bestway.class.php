@@ -159,7 +159,7 @@ class bestway extends eqLogic {
     if (isset($result['error_message'])) {
       throw new \Exception($result['error_message']);
     }
-     
+
     return $result;
   }
 
@@ -415,7 +415,7 @@ class bestway extends eqLogic {
 
   public function refresh() {
     if (config::byKey('location', 'bestway') == 'newapi') {
-      $data = self::requestApi('/gizwits/status?did=' . $this->getLogicalId());
+      $data = self::requestApi('/gizwits/status?did=' . $this->getLogicalId(), array());
       if (isset($data['data'])) {
         $data = $data['data'];
       }
