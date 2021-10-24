@@ -150,7 +150,7 @@ class bestway extends eqLogic {
       ));
     }
     log::add('bestway', 'debug', 'URL : ' .  $url);
-    if ($_post != null) {
+    if ($_post !== null) {
       log::add('bestway', 'debug', 'Post : ' . print_r($_post, true));
       $request_http->setPost($_post);
     }
