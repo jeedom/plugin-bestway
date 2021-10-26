@@ -446,11 +446,29 @@ class bestway extends eqLogic {
   }
 
   public function setAttr($_key, $_value) {
-    self::requestApi('/app/control/' . $this->getLogicalId(), json_encode(array(
-      'attrs' => array(
-        $_key => $_value
-      )
-    )));
+    if (config::byKey('location', 'bestway') == 'newapi') {
+      $action = '';
+      switch ($_key) {
+        case 'wave_power':
+          $action = ($_value) ? 'turn_wave_on' :  'turn_wave_off';
+          break;
+        case 'filter_power':
+          $action = ($_value) ? 'turn_filter_on' :  'turn_filter_off';
+          break;
+        case 'heat_power':
+          $action = ($_value) ? 'turn_heat_on' :  'turn_heat_off';
+          break;
+        case 'power':
+          $action = ($_value) ? 'turn_on' :  'turn_off';
+          break;
+        case 'temp_set':
+          self::requestApi('/gizwits/temp_set?did=' . $this->getLogicalId(), array($_value));
+          return;
+      }
+      self::requestApi('/gizwits/' . $action . '?did=' . $this->getLogicalId(), array());
+      return;
+    }
+    self::requestApi('/app/control/' . $this->getLogicalId(), json_encode(array('attrs' => array($_key => $_value))));
   }
 
   /*     * **********************Getteur Setteur*************************** */
