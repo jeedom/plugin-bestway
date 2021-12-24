@@ -13,7 +13,7 @@ $graphData['day'] = array('start' => date('Y-m-d', strtotime('now -3 month')), '
 		<div class="bs-sidebar">
 			<ul id="ul_object" class="nav nav-list bs-sidenav">
 				<li class="nav-header">{{Liste objets}}</li>
-				<li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%"/></li>
+				<li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%" /></li>
 				<?php
 				foreach ($allObject as $object_li) {
 					if ($object_li->getIsVisible() != 1 || count($object_li->getEqLogic(true, false, 'watering', null, true)) == 0) {
@@ -36,17 +36,17 @@ $graphData['day'] = array('start' => date('Y-m-d', strtotime('now -3 month')), '
 	} else {
 		echo '<div class="col-lg-12">';
 	}
-	$bestways = bestway::generatePanel('dashboard',init('object_id',null),init('period', config::byKey('savePeriod', 'bestway','D')));
+	$bestways = bestway::generatePanel('dashboard', init('object_id', null), init('period', config::byKey('savePeriod', 'bestway', 'D')));
 	echo $bestways['period'];
 	$graphs = $bestways['graphData'];
 	foreach ($bestways['bestways'] as $bestway) {
-		echo '<legend>'.$bestway['eqLogic']['name'].'</legend>';
+		echo '<legend>' . $bestway['eqLogic']['name'] . '</legend>';
 		echo '<div class="row">';
 		echo '<div class="col-lg-5 col-sm-6 col-xs-6 div_eqLogicBestway">';
 		echo $bestway['html'];
 		echo '</div>';
 		echo '<div class="col-lg-7 col-sm-6 col-xs-6">';
-		echo '<div id="div_chartBestway'.$bestway['eqLogic']['id'].'"></div>';
+		echo '<div class="chartContainer" id="div_chartBestway' . $bestway['eqLogic']['id'] . '"></div>';
 		echo '</div>';
 		echo '</div>';
 		$graphs[$bestway['eqLogic']['id']] = $bestway['graph'];
@@ -54,5 +54,5 @@ $graphData['day'] = array('start' => date('Y-m-d', strtotime('now -3 month')), '
 	?>
 </div>
 </div>
-<?php sendVarToJs('bestway_graphs', $graphs);?>
-<?php include_file('desktop', 'panel', 'js', 'bestway');?>
+<?php sendVarToJs('bestway_graphs', $graphs); ?>
+<?php include_file('desktop', 'panel', 'js', 'bestway'); ?>
