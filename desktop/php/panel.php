@@ -5,7 +5,7 @@ if (!isConnect()) {
 $allObject = jeeObject::buildTree();
 sendVarToJs('object_id', init('object_id'));
 $graphdata = array();
-sendVarToJs('jeedomBackgroundImg', 'plugins/bestway/core/img/panel.jpg');
+sendVarToJs('jeedomUtils.backgroundIMG', 'plugins/bestway/core/img/panel.jpg');
 $graphData['day'] = array('start' => date('Y-m-d', strtotime('now -3 month')), 'end' => date('Y-m-d', strtotime('now')));
 ?>
 <div class="row row-overflow" id="div_watering">
