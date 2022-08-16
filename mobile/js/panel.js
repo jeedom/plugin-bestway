@@ -111,26 +111,36 @@ function initGraph(bestway_graphs){
       dateStart : bestway_graphs.day.start,
       dateEnd : bestway_graphs.day.end
     };
+    graphOption.option.graphType = "area"
+    graphOption.option.name = "Filtration";
     var options = JSON.parse(JSON.stringify(graphOption));
     options.success = function(){
       graphOption.option.graphColor = '#3498db';
       graphOption.option.graphScale = 0;
       graphOption.cmd_id = bestway.temp_now;
+      graphOption.option.graphType = "area"
+      graphOption.option.name = "Température";
       jeedom.history.drawChart(JSON.parse(JSON.stringify(graphOption)));
       
       graphOption.option.graphColor = '#c0392b';
       graphOption.option.graphScale = 1;
       graphOption.cmd_id = bestway.heat_power;
+      graphOption.option.graphType = "area"
+      graphOption.option.name = "En chauffe";
       jeedom.history.drawChart(JSON.parse(JSON.stringify(graphOption)));
       
       graphOption.option.graphColor = '#bdc3c7';
       graphOption.option.graphScale = 1;
       graphOption.cmd_id = bestway.wave_power;
+      graphOption.option.graphType = "area"
+      graphOption.option.name = "Bulle";
       jeedom.history.drawChart(JSON.parse(JSON.stringify(graphOption)));
       
       graphOption.option.graphColor = '#e74c3c';
       graphOption.option.graphScale = 0;
       graphOption.cmd_id = bestway.temp_set;
+      graphOption.option.graphType = "area"
+      graphOption.option.name = "Thermostat";
       jeedom.history.drawChart(JSON.parse(JSON.stringify(graphOption)));
     }
     jeedom.history.drawChart(options);

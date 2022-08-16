@@ -103,6 +103,7 @@ class bestway extends eqLogic {
   }
 
   public static function getUserToken() {
+    log::add('bestway', 'debug', '[getUserToken] api : ' . config::byKey('location', 'bestway'));
     $cache = is_json(cache::byKey('bestway::token')->getValue(), array());
     if (config::byKey('location', 'bestway') == 'newapi') {
       if (isset($cache['data']) && isset($result['data']['api_token'])) {
@@ -114,6 +115,7 @@ class bestway extends eqLogic {
       ));
       $request_http->setPost('email=' . urlencode(config::byKey('username', 'bestway')) . '&password=' . urlencode(config::byKey('password', 'bestway')));
       $result = json_decode($request_http->exec(30), true);
+      log::add('bestway', 'debug', '[getUserToken] result : ' . json_encode($result));
       cache::set('bestway::token', json_encode($result));
       return $result['data']['api_token'];
     }
@@ -130,6 +132,7 @@ class bestway extends eqLogic {
     ));
     $request_http->setPost(json_encode(array('username' => config::byKey('username', 'bestway'), 'password' => config::byKey('password', 'bestway'))));
     $result = json_decode($request_http->exec(30), true);
+    log::add('bestway', 'debug', '[getUserToken] result : ' . json_encode($result));
     if (isset($result['error_message'])) {
       throw new \Exception($result['error_message']);
     }
@@ -164,9 +167,9 @@ class bestway extends eqLogic {
   }
 
   public static function sync() {
+    cache::set('bestway::token', '');
+    self::getUserToken();
     if (config::byKey('location', 'bestway') == 'newapi') {
-      cache::set('bestway::token', '');
-      self::getUserToken();
       $devices = is_json(cache::byKey('bestway::token')->getValue(), array());
     } else {
       $devices = self::requestApi('/app/bindings');
@@ -275,24 +278,14 @@ class bestway extends eqLogic {
       $return['bestways'][$bestway->getId()]['html'] = $bestway->toHtml($_version);
 
       $cmd_filter_power = $bestway->getCmd('info', 'filter_power');
-      $cmd_filter_power->setDisplay('graphType', 'area');
-      $cmd_filter_power->save();
 
       $cmd_temp_now = $bestway->getCmd('info', 'temp_now');
-      $cmd_temp_now->setDisplay('graphType', 'area');
-      $cmd_temp_now->save();
 
       $cmd_heat_power = $bestway->getCmd('info', 'heat_power');
-      $cmd_heat_power->setDisplay('graphType', 'area');
-      $cmd_heat_power->save();
 
       $cmd_wave_power = $bestway->getCmd('info', 'wave_power');
-      $cmd_wave_power->setDisplay('graphType', 'area');
-      $cmd_wave_power->save();
 
       $cmd_temp_set = $bestway->getCmd('info', 'temp_set');
-      $cmd_temp_set->setDisplay('graphType', 'line');
-      $cmd_temp_set->save();
 
       $return['bestways'][$bestway->getId()]['graph'] = array(
         'filter_power' => $cmd_filter_power->getId(),
