@@ -9,7 +9,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 
 <div class="row row-overflow">
 	<div class="col-xs-12 eqLogicThumbnailDisplay">
-		<legend><i class="fas fa-cog"></i>  {{Gestion}}</legend>
+		<legend><i class="fas fa-cog"></i> {{Gestion}}</legend>
 		<div class="eqLogicThumbnailContainer">
 			<div class="cursor eqLogicAction logoSecondary" data-action="gotoPluginConf">
 				<i class="fas fa-wrench"></i>
@@ -18,7 +18,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 			</div>
 			<div class="cursor logoSecondary" id="bt_syncBestway">
 				<i class="fas fa-sync-alt"></i>
-				<br/>
+				<br />
 				<span>{{Synchroniser}}</span>
 			</div>
 		</div>
@@ -28,7 +28,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 			<?php
 			foreach ($eqLogics as $eqLogic) {
 				$opacity = ($eqLogic->getIsEnable()) ? '' : 'disableCard';
-				echo '<div class="eqLogicDisplayCard cursor '.$opacity.'" data-eqLogic_id="' . $eqLogic->getId() . '">';
+				echo '<div class="eqLogicDisplayCard cursor ' . $opacity . '" data-eqLogic_id="' . $eqLogic->getId() . '">';
 				echo '<img src="' . $plugin->getPathImgIcon() . '"/>';
 				echo '<br>';
 				echo '<span class="name">' . $eqLogic->getHumanName(true, true) . '</span>';
@@ -37,7 +37,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 			?>
 		</div>
 	</div>
-	
+
 	<div class="col-xs-12 eqLogic" style="display: none;">
 		<div class="input-group pull-right" style="display:inline-flex">
 			<span class="input-group-btn">
@@ -51,7 +51,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 		</ul>
 		<div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
 			<div role="tabpanel" class="tab-pane active" id="eqlogictab">
-				<br/>
+				<br />
 				<div class="row">
 					<div class="col-sm-6">
 						<form class="form-horizontal">
@@ -60,11 +60,11 @@ $eqLogics = eqLogic::byType($plugin->getId());
 									<label class="col-sm-3 control-label">{{Nom de l'équipement Bestway}}</label>
 									<div class="col-sm-3">
 										<input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
-										<input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement template}}"/>
+										<input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement template}}" />
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-3 control-label" >{{Objet parent}}</label>
+									<label class="col-sm-3 control-label">{{Objet parent}}</label>
 									<div class="col-sm-3">
 										<select id="sel_object" class="eqLogicAttr form-control" data-l1key="object_id">
 											<option value="">{{Aucun}}</option>
@@ -93,8 +93,8 @@ $eqLogics = eqLogic::byType($plugin->getId());
 								<div class="form-group">
 									<label class="col-sm-3 control-label"></label>
 									<div class="col-sm-9">
-										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
-										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
+										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked />{{Activer}}</label>
+										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked />{{Visible}}</label>
 									</div>
 								</div>
 								<div class="form-group">
@@ -106,7 +106,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 								<div class="form-group">
 									<label class="col-sm-3 control-label">{{Chauffage, durée max autorisé (en min,0 pour illimité)}}</label>
 									<div class="col-sm-3">
-										<input  class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="heating::maxDuration" />
+										<input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="heating::maxDuration" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -119,7 +119,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 									<label class="col-sm-3 control-label">{{Commande d'information}}</label>
 									<div class="col-sm-6">
 										<div class="input-group">
-											<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="info::cmd"/>
+											<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="info::cmd" />
 											<span class="input-group-btn">
 												<a class="btn btn-default listCmdAction roundedRight" data-subType="message"><i class="fas fa-list-alt"></i></a>
 											</span>
@@ -135,13 +135,13 @@ $eqLogics = eqLogic::byType($plugin->getId());
 								<div class="form-group">
 									<label class="col-sm-3 control-label">{{MAC}}</label>
 									<div class="col-sm-6">
-										<span class="eqLogicAttr label label-info" data-l1key="configuration" data-l2key="mac"/>
+										<span class="eqLogicAttr label label-info" data-l1key="configuration" data-l2key="mac" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-3 control-label">{{Wifi version}}</label>
 									<div class="col-sm-6">
-										<span class="eqLogicAttr label label-info" data-l1key="configuration" data-l2key="wifi_soft_version"/>
+										<span class="eqLogicAttr label label-info" data-l1key="configuration" data-l2key="wifi_soft_version" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -164,7 +164,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 									</div>
 								</div>
 								<center>
-									<img src="<?php echo $plugin->getPathImgIcon() ?>" data-original=".jpg" id="img_device" class="img-responsive" style="max-height : 250px;"  onerror="this.src='<?php echo $plugin->getPathImgIcon() ?>'"/>
+									<img src="<?php echo $plugin->getPathImgIcon() ?>" data-original=".jpg" id="img_device" class="img-responsive" style="max-height : 250px;" onerror="this.src='<?php echo $plugin->getPathImgIcon() ?>'" />
 								</center>
 							</fieldset>
 						</form>
@@ -172,11 +172,14 @@ $eqLogics = eqLogic::byType($plugin->getId());
 				</div>
 			</div>
 			<div role="tabpanel" class="tab-pane" id="commandtab">
-				<a class="btn btn-success btn-sm cmdAction pull-right" data-action="add" style="margin-top:5px;"><i class="fa fa-plus-circle"></i> {{Commandes}}</a><br/><br/>
+				<a class="btn btn-success btn-sm cmdAction pull-right" data-action="add" style="margin-top:5px;"><i class="fa fa-plus-circle"></i> {{Commandes}}</a><br /><br />
 				<table id="table_cmd" class="table table-bordered table-condensed">
 					<thead>
 						<tr>
-							<th>{{Nom}}</th><th>{{Type}}</th><th>{{Action}}</th>
+							<th>{{Nom}}</th>
+							<th>{{Type}}</th>
+							<th>{{Etat}}</th>
+							<th>{{Action}}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -184,9 +187,9 @@ $eqLogics = eqLogic::byType($plugin->getId());
 				</table>
 			</div>
 		</div>
-		
+
 	</div>
 </div>
 
-<?php include_file('desktop', 'bestway', 'js', 'bestway');?>
-<?php include_file('core', 'plugin.template', 'js');?>
+<?php include_file('desktop', 'bestway', 'js', 'bestway'); ?>
+<?php include_file('core', 'plugin.template', 'js'); ?>
